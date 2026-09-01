@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { localSeoSlugs } from "@/data/local-seo";
 import { getAllInsights } from "@/lib/insights";
 import { absoluteUrl } from "@/lib/site";
 
@@ -14,6 +15,7 @@ const staticRoutes = [
   "/faq",
   "/privacy",
   "/professional-scope",
+  ...localSeoSlugs,
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

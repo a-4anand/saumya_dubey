@@ -10,12 +10,11 @@ import type {
 export const siteConfig = {
   name: "Saumya Dubey",
   shortName: "Saumya",
-  headerDescriptor: "Founder-Led QA & Documentation Support",
-  serviceDescriptor:
-    "Batch records, SOPs, audit readiness and overflow QA support for regulated manufacturers",
-  title: "Independent QA & Documentation Consultant",
+  headerDescriptor: "Independent QA & GMP Consulting",
+  serviceDescriptor: "QA · Documentation · Quality Systems · Compliance Support",
+  title: "Independent QA & GMP Consulting",
   description:
-    "Saumya Dubey helps pharmaceutical, Ayurvedic and related manufacturers reduce QA backlog, strengthen documentation and improve audit readiness.",
+    "Independent QA, documentation and quality-system support for pharmaceutical, Ayurvedic, nutraceutical and related manufacturing businesses.",
   location: "Surat, Gujarat, India",
   serviceAreas: [
     "Surat",
@@ -24,15 +23,14 @@ export const siteConfig = {
     "Remote engagements across India",
   ],
   heroEyebrow: "SAUMYA DUBEY",
-  heroHeadline: "When QA paperwork starts slowing the business, bring in focused support.",
+  heroHeadline: "Quality assurance, without the complexity.",
   heroAltHeadline: "Founder-led QA support for documentation-heavy manufacturing teams",
   heroDescription:
-    "Saumya works directly with pharmaceutical, Ayurvedic, nutraceutical and related manufacturers that need cleaner records, stronger review discipline and extra QA support without building a large consulting layer.",
+    "Independent QA, documentation and quality-system support for pharmaceutical, Ayurvedic, nutraceutical and related manufacturing businesses.",
   credibilityStrip: [
     "B.Sc. Pharmaceutical Chemistry",
     "D.Pharm — Ayurveda",
-    "Founder-led support",
-    "Project or ongoing scope",
+    "3+ Years QA Experience",
   ],
   navItems: [
     { label: "Services", href: "/services" },
@@ -40,6 +38,7 @@ export const siteConfig = {
     { label: "About", href: "/about" },
     { label: "How It Works", href: "/how-it-works" },
     { label: "Insights", href: "/insights" },
+    { label: "Contact", href: "/contact" },
   ] satisfies NavItem[],
   footerItems: [
     { label: "Services", href: "/services" },
@@ -240,18 +239,17 @@ export const processSteps: ProcessStep[] = [
 export const experienceTimeline: ExperienceEntry[] = [
   {
     yearLabel: "2022",
-    company: "Mepromax Lifescience Private Limited, Dehradun",
+    company: "Mepromax Lifesciences Pvt. Ltd., Dehradun, Uttarakhand",
     role: "Quality Assurance Trainee",
   },
   {
     yearLabel: "Next",
-    company: "Unilever",
-    role: "Quality Assurance Officer",
-    note: "Approximately 6 months",
+    company: "Ronald Pharmaceutical Pvt. Ltd., Vadodara, Gujarat",
+    role: "Quality Assurance Professional",
   },
   {
     yearLabel: "Next",
-    company: "DAC55",
+    company: "DAC55 Laboratory Pvt. Ltd., Vadodara, Gujarat",
     role: "Quality Assurance Executive",
   },
   {
@@ -332,7 +330,7 @@ export const trustHighlights = [
   "D.Pharm — Ayurveda",
   "~3 years QA experience",
   "Founder-led support with direct communication",
-  "Previous QA roles at Mepromax Lifescience, Unilever and DAC55",
+  "Previous QA roles at Mepromax Lifesciences, Ronald Pharmaceutical and DAC55 Laboratory",
   "Focused on backlog reduction, documentation quality and audit readiness",
 ];
 

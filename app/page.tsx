@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { SectionHeading } from "@/components/section-heading";
-import { ServiceAccordion } from "@/components/service-accordion";
 import { StructuredData } from "@/components/structured-data";
 import { TrackableLink } from "@/components/trackable-link";
 import { WhatsAppIcon } from "@/components/icons";
@@ -9,171 +8,87 @@ import { experienceTimeline, processSteps, siteConfig } from "@/data/site-config
 import { createMetadata } from "@/lib/metadata";
 import { phoneHref, whatsappHref } from "@/lib/site";
 
+const cleanroomStandingImage =
+  "/images/real-experience/codex-clipboard-19fc0b89-6b54-4a69-a6a0-d03c92ba830a.png";
+const cleanroomDeskImage =
+  "/images/real-experience/codex-clipboard-dcb72fe3-90d4-494d-9631-05ecea929dd6.png";
+const documentationDeskImage =
+  "/images/real-experience/codex-clipboard-d7bb4d8b-be8a-4fd3-8957-134ba09e6189.png";
+
 const problemItems = [
   {
-    title: "Batch record backlog",
-    description:
-      "Final review starts piling up, release pressure rises and internal QA loses time to repeat checking.",
+    title: "Batch records are waiting for final QA review",
+    signal: "Release confidence starts depending on rushed checking.",
+    fix: "Saumya adds a disciplined second pass, captures missing details and helps the team move records forward with clearer control.",
   },
   {
-    title: "SOP revisions slipping",
-    description:
-      "Procedures drift away from current operations when revision work keeps getting pushed behind daily workload.",
+    title: "SOPs are outdated or inconsistent",
+    signal: "Procedures no longer match how the work is actually happening.",
+    fix: "She supports revision, cleanup and formatting so documents become easier to use, review and maintain.",
   },
   {
-    title: "Audit-readiness pressure",
-    description:
-      "Teams suddenly need cleaner records, better control and a sharper review process before audits or inspections.",
+    title: "Audit preparation is becoming reactive",
+    signal: "Teams wait until pressure rises, then try to clean everything at once.",
+    fix: "Saumya helps identify visible documentation gaps early and turns them into practical follow-through actions.",
   },
   {
-    title: "Documentation inconsistency",
-    description:
-      "Formatting gaps, missing details and uneven standards create avoidable rework across the quality system.",
+    title: "Your QA team is stretched",
+    signal: "Daily workload keeps winning over important documentation work.",
+    fix: "She can take a scoped overflow requirement so internal QA keeps momentum without adding a permanent layer.",
   },
-  {
-    title: "Stretched QA bandwidth",
-    description:
-      "The workload grows faster than the team, so review quality drops or the backlog starts compounding.",
-  },
-  {
-    title: "Need for a second review",
-    description:
-      "Sometimes the fastest way to reduce risk is a fresh, disciplined outside review of the work already in motion.",
-  },
-];
-
-const supportItems = [
-  "Batch record review support",
-  "SOP revision and document cleanup",
-  "QA documentation standardization",
-  "Internal audit readiness support",
-  "COA, specification and technical document review",
-  "Overflow QA support for stretched teams",
 ];
 
 const serviceItems = [
   {
-    number: "01",
-    title: "Batch Record Review Support",
-    meta: "Backlog · Final review · QA bandwidth",
+    title: "Batch record review support",
     description:
-      "Useful when final batch review starts slowing the team down and an additional disciplined QA pass is needed.",
-    imageSrc: "/images/document-review.png",
-    imageAlt: "Saumya Dubey reviewing batch record documentation.",
-    bullets: [
-      "Additional review capacity",
-      "Focused final checking",
-      "Structured QA feedback",
-    ],
+      "Extra QA review capacity for teams that need records checked carefully, consistently and without slowing internal release work.",
+    signature: "Final review · Backlog reduction · QA bandwidth",
   },
   {
-    number: "02",
-    title: "SOP Revision & Documentation Cleanup",
-    meta: "Revision support · Consistency · Control",
+    title: "SOP revision and document cleanup",
     description:
-      "Support SOP revision and related documentation cleanup so procedures stay current, clearer and easier to control.",
-    imageSrc: "/images/document-review.png",
-    imageAlt: "Document review workspace for SOP revision and QA documentation support.",
-    bullets: ["Revision discipline", "Formatting consistency", "Practical cleanup"],
+      "Practical support for SOP updates, formatting consistency, document structure and controlled cleanup where procedures have become hard to maintain.",
+    signature: "Revision discipline · Document control · Cleaner handover",
   },
   {
-    number: "03",
-    title: "Internal Audit Readiness Support",
-    meta: "Gap review · Self-inspection · Follow-through",
+    title: "Internal audit readiness",
     description:
-      "Bring in a second set of eyes when teams need a clearer view of documentation gaps before audit pressure builds.",
-    imageSrc: "/images/qa-audit.png",
-    imageAlt: "Internal QA audit review in a pharmaceutical setting.",
-    bullets: ["Independent review", "Gap visibility", "Practical next steps"],
+      "A focused outside review for internal audits, self-inspections and preparation work where the team needs gap visibility before pressure builds.",
+    signature: "Gap review · Self-inspection · Practical next steps",
   },
   {
-    number: "04",
-    title: "Change Control & Quality-System Support",
-    meta: "Documentation support · Structure · Follow-through",
+    title: "COA, specifications, STP and TDS review",
     description:
-      "Support change-control and related QA system documentation where structure and follow-through need tightening.",
-    imageSrc: "/images/pharma-manufacturing.png",
-    imageAlt: "Controlled pharmaceutical manufacturing environment.",
-    bullets: ["Change-control clarity", "Document structure", "Quality-system support"],
+      "Technical document review for teams that need stronger consistency, clearer wording and fewer avoidable corrections.",
+    signature: "Technical clarity · Consistency · Detail review",
   },
   {
-    number: "05",
-    title: "COA, Specifications, STP & TDS Review",
-    meta: "Technical review · Consistency · Detail",
+    title: "Quality-system and change-control support",
     description:
-      "Review technical documents carefully so teams are not losing time to avoidable inconsistency or unclear details.",
-    imageSrc: "/images/coa-specification.png",
-    imageAlt: "Specification and technical document review in a QA laboratory.",
-    bullets: ["COA review", "Specification checks", "STP / TDS consistency"],
+      "Scoped help for quality-system records, change-control documentation and supporting files that need tighter structure and follow-through.",
+    signature: "Structure · Control · Follow-through",
   },
   {
-    number: "06",
-    title: "Overflow QA Support for Growing Teams",
-    meta: "Overflow support · Backlog reduction · Scoped engagement",
+    title: "Ayurvedic and herbal documentation support",
     description:
-      "Useful when documentation and review pressure have outgrown internal capacity and the team needs extra help fast.",
-    imageSrc: "/images/pharma-manufacturing.png",
-    imageAlt: "Manufacturing floor supporting QA workload management.",
-    bullets: ["Project-based support", "Ongoing support", "QA workload relief"],
-  },
-  {
-    number: "07",
-    title: "Ayurvedic / Herbal Documentation Support",
-    meta: "Ayurvedic context · Documentation review · Scoped support",
-    description:
-      "A strong fit where Ayurveda-linked or herbal manufacturing still needs disciplined, formal documentation support.",
-    imageSrc: "/images/ayurvedic-quality.png",
-    imageAlt: "Ayurvedic and herbal documentation review in a quality environment.",
-    bullets: ["Sector fit", "Documentation quality", "Practical support"],
+      "A strong fit for Ayurveda-linked and herbal manufacturers where formal QA documentation still needs practical product-context understanding.",
+    signature: "Ayurveda fit · Herbal context · QA documentation",
   },
 ];
 
-const whySaumyaItems = [
-  {
-    title: "Direct founder involvement",
-    description: "You work directly with Saumya throughout the engagement, not through a layered consulting team.",
-  },
-  {
-    title: "Real QA context",
-    description: "The background comes from hands-on QA roles in regulated manufacturing, not only generic advisory copy.",
-  },
-  {
-    title: "Strong sector fit",
-    description: "Pharmaceutical Chemistry and Ayurveda training make the work especially credible for pharma and Ayurveda-linked businesses.",
-  },
-  {
-    title: "Useful for backlog pressure",
-    description: "A good fit when internal teams need review help, document cleanup or extra QA capacity without hiring immediately.",
-  },
-  {
-    title: "Scoped and practical",
-    description: "Engagements are shaped around a live bottleneck, not padded into a vague consulting package.",
-  },
-  {
-    title: "Flexible engagement",
-    description: "One-time cleanup, focused review work and ongoing support can all be discussed within scope.",
-  },
-];
-
-const processLabels = ["Backlog", "Review", "Control", "Confidence"];
-
-const processSubLabels = ["Records", "SOPs", "QA Systems", "Audits"];
-
-const commonRequirementLabels = [
-  "Batch record backlog",
-  "SOP revision",
-  "Audit readiness",
-  "COA review",
-  "Specification checks",
-  "Change control",
-  "QA overflow",
-  "Documentation cleanup",
+const whyItems = [
+  "You work directly with Saumya, not a sales layer or junior delivery team.",
+  "Her background is hands-on QA work inside real manufacturing environments.",
+  "Her Pharmaceutical Chemistry and Ayurveda education fits both pharma and Ayurveda-linked businesses.",
+  "The work is scoped around the bottleneck your team is actually facing.",
+  "Communication is simple: WhatsApp, call or a short requirement form that opens directly for Saumya.",
 ];
 
 export const metadata = createMetadata({
-  title: "QA Support for Documentation-Heavy Manufacturing Teams",
+  title: "Independent QA & GMP Consulting for Manufacturing Businesses",
   description:
-    "Saumya Dubey helps regulated manufacturers reduce QA backlog, strengthen documentation and improve audit readiness with founder-led support.",
+    "Saumya Dubey provides founder-led QA, GMP, documentation and quality-system support for pharmaceutical, Ayurvedic and related manufacturing businesses.",
   path: "/",
 });
 
@@ -185,13 +100,15 @@ export default function HomePage() {
       <section className="hero-luxury">
         <div className="container hero-luxury-grid">
           <div className="hero-luxury-copy">
-            <p className="hero-descriptor">Founder-led QA support for regulated manufacturers</p>
+            <p className="hero-name">{siteConfig.heroEyebrow}</p>
+            <p className="hero-descriptor">QA · GMP · DOCUMENTATION · QUALITY SYSTEMS</p>
             <h1>{siteConfig.heroHeadline}</h1>
             <p className="body-large">{siteConfig.heroDescription}</p>
-            <p className="hero-credibility-line">
-              Batch records, SOPs, audit readiness and documentation support for pharmaceutical,
-              Ayurvedic, nutraceutical and related manufacturing teams.
-            </p>
+            <div className="hero-credential-row" aria-label="Saumya Dubey credentials">
+              {siteConfig.credibilityStrip.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
             <div className="hero-actions">
               <TrackableLink
                 className="button button-primary"
@@ -199,7 +116,7 @@ export default function HomePage() {
                 eventName="consultation_click"
                 href="/contact"
               >
-                Book a Scope Call
+                Discuss a QA Requirement
               </TrackableLink>
               <TrackableLink
                 className="button button-whatsapp"
@@ -217,7 +134,7 @@ export default function HomePage() {
             <div className="hero-portrait-accent" />
             <div className="hero-portrait-frame">
               <Image
-                alt="Saumya Dubey in a premium professional portrait for her QA consulting website."
+                alt="Saumya Dubey in a professional QA consulting portrait."
                 className="hero-portrait-image"
                 height={1024}
                 priority
@@ -234,266 +151,86 @@ export default function HomePage() {
         <div className="container trust-type-row">
           <span>B.Sc. Pharmaceutical Chemistry</span>
           <span>D.Pharm — Ayurveda</span>
-          <span>Founder-led support</span>
-          <span>On-site in Gujarat · Remote across India</span>
+          <span>3+ Years QA Experience</span>
+          <span>Surat · Gujarat · Remote support</span>
         </div>
       </section>
 
       <section className="section section-cream">
-        <div className="container section-shell section-shell-cream">
+        <div className="container founder-proof-grid">
+          <div className="founder-proof-copy">
+            <p className="eyebrow">Who Is Saumya?</p>
+            <h2>Founder-led QA support from someone who has worked inside the system.</h2>
+            <p className="section-description">
+              Saumya Dubey supports pharmaceutical, Ayurvedic, nutraceutical and related
+              manufacturing businesses with QA documentation, review discipline and quality-system
+              work. The value is not theory. It is practical help when records, SOPs and audit
+              preparation are already taking time away from the team.
+            </p>
+          </div>
+          <figure className="proof-portrait">
+            <Image
+              alt="Saumya Dubey in a professional office setting."
+              className="proof-portrait-image"
+              height={1024}
+              sizes="(max-width: 980px) 100vw, 36vw"
+              src="/images/saumya-about.png"
+              width={1536}
+            />
+            <figcaption>
+              Direct communication, scoped support and clear handover from the person doing the QA
+              work.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="section problem-section">
+        <div className="container problem-layout">
           <SectionHeading
-            eyebrow="Where Businesses Get Stuck"
-            title="The work usually breaks down long before an audit does."
-            description="Most clients do not need a lecture on QA. They need cleaner documentation, disciplined review and practical support where the pressure is already visible."
+            eyebrow="What She Fixes"
+            title="When QA work starts slowing the business, the engagement starts there."
+            description="The website should not teach clients what QA means. It should help them recognize their own bottleneck and make it easy to ask Saumya for focused support."
           />
           <div className="problem-card-grid">
             {problemItems.map((item, index) => (
               <article className="problem-card-item" key={item.title}>
                 <span className="problem-card-index">{String(index + 1).padStart(2, "0")}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <div className="problem-card-line" aria-hidden="true" />
+                <div>
+                  <h3>{item.title}</h3>
+                  <p className="problem-signal">{item.signal}</p>
+                  <p>{item.fix}</p>
+                </div>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-editorial">
-        <div className="container section-shell section-shell-sage editorial-split editorial-split-large">
-          <div className="editorial-media editorial-media-offset">
-            <Image
-              alt="Saumya Dubey reviewing QA documents and production records for client support."
-              className="editorial-image"
-              height={1024}
-              sizes="(max-width: 980px) 100vw, 45vw"
-              src="/images/document-review.png"
-              width={1536}
-            />
-          </div>
-          <div className="editorial-copy">
-            <p className="eyebrow">How Saumya Helps</p>
-            <h2>Focused support where QA pressure starts affecting operations.</h2>
-            <p className="section-description">
-              The engagement starts with the live bottleneck: batch records waiting for review,
-              SOPs slipping behind, technical documents needing cleanup, or audit-readiness work
-              that the team does not have enough time to finish properly.
-            </p>
-            <ul className="editorial-type-list">
-              {supportItems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="signature-process-section">
-        <div className="container signature-process-shell">
-          <div className="signature-process">
-            <div className="signature-process-words">
-              {processLabels.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
-            <div className="signature-process-line" />
-            <div className="signature-process-notes">
-              {processSubLabels.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
       <section className="section section-forest">
-        <div className="container section-shell section-shell-forest">
-          <SectionHeading
-            eyebrow="Services"
-            title="Support designed around business bottlenecks, not generic consulting packages."
-            description="Each engagement is scoped around a real requirement such as review backlog, revision work, audit-readiness pressure or overflow QA support."
-          />
-          <ServiceAccordion items={serviceItems} />
-        </div>
-      </section>
-
-      <section className="section section-editorial">
-        <div className="container section-shell section-shell-cream">
-          <SectionHeading
-            eyebrow="Who Typically Hires Saumya"
-            title="A fit for documentation-heavy regulated manufacturing environments."
-            description="Best suited to businesses where QA paperwork directly affects release confidence, audit readiness and day-to-day control."
-          />
-
-          <div className="industry-story-grid">
-            <article className="industry-story industry-story-wide">
-              <div className="industry-story-copy">
-                <p className="eyebrow">Pharmaceutical</p>
-                <h3>Useful when documentation pressure starts affecting review quality and operational confidence.</h3>
-                <p>
-                  A strong fit for pharmaceutical teams that need cleaner records, stronger review
-                  discipline and extra QA support without building a large external consulting layer.
-                </p>
-              </div>
-              <Image
-                alt="Pharmaceutical manufacturing floor."
-                className="story-image story-image-wide"
-                height={941}
-                sizes="(max-width: 980px) 100vw, 62vw"
-                src="/images/pharma-manufacturing.png"
-                width={1672}
-              />
-            </article>
-
-            <article className="industry-story">
-              <Image
-                alt="Ayurvedic and herbal quality documentation review."
-                className="story-image"
-                height={1024}
-                sizes="(max-width: 980px) 100vw, 40vw"
-                src="/images/ayurvedic-quality.png"
-                width={1536}
-              />
-              <div className="industry-story-copy">
-                <p className="eyebrow">Ayurvedic / Herbal</p>
-                <h3>Especially relevant where Ayurveda-linked manufacturing needs both sector fit and formal documentation discipline.</h3>
-                <p>
-                  The Pharmaceutical Chemistry and Ayurveda background strengthens the fit for
-                  businesses that need practical support without losing technical credibility.
-                </p>
-              </div>
-            </article>
-
-            <article className="industry-story industry-story-text">
-              <p className="eyebrow">Related manufacturing</p>
-              <h3>Nutraceutical, cosmetic and third-party support can be scoped around the exact pressure point.</h3>
-              <p>
-                The best use case is usually backlog cleanup, document review, QA coordination or
-                temporary support where quality work is outgrowing internal bandwidth.
-              </p>
-              <ul className="detail-list detail-list-compact">
-                <li>Nutraceutical</li>
-                <li>Cosmetic / related manufacturing</li>
-                <li>Third-party / private label coordination</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="audit-feature-section">
-        <div className="container section-shell section-shell-sage">
-          <Image
-            alt="Internal QA audit and self-inspection review."
-            className="audit-feature-image"
-            height={1024}
-            sizes="100vw"
-            src="/images/qa-audit.png"
-            width={1536}
-          />
-          <div className="audit-feature-copy">
-            <p className="eyebrow">Second Review</p>
-            <h2>Useful when the team is too close to the work to spot gaps quickly.</h2>
+        <div className="container services-editorial-grid">
+          <div className="services-editorial-copy">
+            <p className="eyebrow">What Saumya Offers</p>
+            <h2>Scoped QA support that feels senior, calm and usable.</h2>
             <p className="section-description">
-              Internal audits, self-inspections and targeted document reviews become much more
-              useful when someone can step in with a disciplined outside perspective before the
-              pressure becomes expensive.
+              Each service is framed around a real operational outcome: cleaner records, fewer
+              documentation corrections, better review discipline and more confidence before audits
+              or handover.
             </p>
             <TrackableLink
-              className="service-link"
-              eventLabel="audit consultation"
+              className="button button-light"
+              eventLabel="services contact"
               eventName="consultation_click"
               href="/contact"
             >
-              Discuss Audit-Readiness Support
+              Send your requirement
             </TrackableLink>
           </div>
-        </div>
-      </section>
-
-      <section className="section section-cream">
-        <div className="container section-shell section-shell-cream editorial-split editorial-split-reverse">
-          <div className="editorial-copy">
-            <p className="eyebrow">Why Hire Saumya</p>
-            <h2>You work directly with the person doing the review and support.</h2>
-            <p className="body-large">
-              This is founder-led QA support for businesses that need practical help, not a
-              bloated consulting setup.
-            </p>
-            <p className="section-description">
-              Saumya brings Pharmaceutical Chemistry, D.Pharm in Ayurveda and hands-on QA roles
-              across regulated manufacturing settings. Former employers are part of her factual
-              professional path, not presented as current consulting clients.
-            </p>
-          </div>
-          <div className="editorial-media">
-            <Image
-              alt="Saumya Dubey portrait in a professional office."
-              className="editorial-image editorial-image-portrait"
-              height={1024}
-              sizes="(max-width: 980px) 100vw, 42vw"
-              src="/images/saumya-about.png"
-              width={1536}
-            />
-          </div>
-        </div>
-
-        <div className="career-timeline">
-          {experienceTimeline.map((entry, index) => (
-            <article className="career-timeline-row" key={`${entry.yearLabel}-${entry.company}`}>
-              <div className="career-timeline-year">{entry.yearLabel}</div>
-              <div className="career-timeline-line" aria-hidden="true">
-                {index < experienceTimeline.length - 1 ? <span /> : null}
-              </div>
-              <div className="career-timeline-copy">
-                <h3>{entry.company}</h3>
-                <p>{entry.role}</p>
-                {entry.note ? <p className="timeline-note">{entry.note}</p> : null}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section section-editorial">
-        <div className="container section-shell section-shell-cream editorial-split">
-          <div className="editorial-media editorial-media-small">
-            <Image
-              alt="COA and specification review support in a QA environment."
-              className="editorial-image"
-              height={1024}
-              sizes="(max-width: 980px) 100vw, 38vw"
-              src="/images/coa-specification.png"
-              width={1536}
-            />
-          </div>
-          <div className="editorial-copy">
-            <p className="eyebrow">Common Requirements</p>
-            <h2>Most engagements start with one concrete pressure point.</h2>
-            <p className="section-description">
-              Clients usually come in with a single visible problem. The scope becomes clearer once
-              that bottleneck is named and the affected documents are reviewed.
-            </p>
-            <div className="label-cloud">
-              {commonRequirementLabels.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="why-saumya-section">
-        <div className="container section-shell section-shell-forest-plain">
-          <SectionHeading
-            eyebrow="Why Saumya"
-            title="Why businesses choose a focused consultant instead of letting the backlog grow."
-            description="The value is direct communication, disciplined review and useful QA support where the internal team is already stretched."
-          />
-          <div className="principles-grid">
-            {whySaumyaItems.map((item) => (
-              <article className="principle-item" key={item.title}>
-                <p className="principle-label">{item.title}</p>
+          <div className="service-signature-list">
+            {serviceItems.map((item) => (
+              <article className="service-signature-card" key={item.title}>
+                <p className="service-signature">{item.signature}</p>
+                <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </article>
             ))}
@@ -501,13 +238,79 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-forest-soft">
-        <div className="container section-shell section-shell-cream">
-          <SectionHeading
-            eyebrow="How It Works"
-            title="A simple engagement model for urgent or messy QA work."
-            description="Start with the bottleneck, review the current state, complete the agreed support and close with usable outputs and next actions."
-          />
+      <section className="section section-editorial">
+        <div className="container real-experience-grid">
+          <div className="real-experience-copy">
+            <p className="eyebrow">Why Trust Her?</p>
+            <h2>Real workplace exposure, presented honestly.</h2>
+            <p className="section-description">
+              These images support Saumya&apos;s professional background and QA experience. They are
+              shown as previous experience and work-context proof, not as fabricated client case
+              studies or promised outcomes.
+            </p>
+            <div className="career-timeline">
+              {experienceTimeline.map((entry, index) => (
+                <article className="career-timeline-row" key={`${entry.yearLabel}-${entry.company}`}>
+                  <div className="career-timeline-year">{entry.yearLabel}</div>
+                  <div className="career-timeline-line" aria-hidden="true">
+                    {index < experienceTimeline.length - 1 ? <span /> : null}
+                  </div>
+                  <div className="career-timeline-copy">
+                    <h3>{entry.company}</h3>
+                    <p>{entry.role}</p>
+                    {entry.note ? <p className="timeline-note">{entry.note}</p> : null}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div className="experience-image-stack">
+            <figure className="experience-image-frame experience-image-tall">
+              <Image
+                alt="Saumya Dubey in a cleanroom uniform during previous QA experience."
+                className="experience-image"
+                height={1824}
+                sizes="(max-width: 980px) 100vw, 26vw"
+                src={cleanroomStandingImage}
+                width={862}
+              />
+              <figcaption>Previous QA environment exposure</figcaption>
+            </figure>
+            <figure className="experience-image-frame">
+              <Image
+                alt="Saumya Dubey working with documentation in a QA workplace."
+                className="experience-image"
+                height={1086}
+                sizes="(max-width: 980px) 100vw, 32vw"
+                src={cleanroomDeskImage}
+                width={1448}
+              />
+              <figcaption>Documentation and record review context</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-cream">
+        <div className="container why-hire-layout">
+          <div>
+            <p className="eyebrow">Why Hire Saumya?</p>
+            <h2>Because the problem is usually not knowledge. It is capacity, discipline and follow-through.</h2>
+          </div>
+          <div className="why-hire-list">
+            {whyItems.map((item) => (
+              <p key={item}>{item}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-editorial">
+        <div className="container engagement-grid">
+          <div>
+            <p className="eyebrow">How Engagement Works</p>
+            <h2>Simple enough to start quickly. Structured enough to be useful.</h2>
+          </div>
           <div className="process-line-layout">
             {processSteps.map((step) => (
               <article className="process-line-item" key={step.step}>
@@ -520,77 +323,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="first-engagement-section">
-        <div className="container section-shell section-shell-sage first-engagement-band">
-          <div>
-            <p className="eyebrow">First Conversation</p>
-            <h2>Bring the bottleneck, not a polished brief.</h2>
-            <p className="section-description">
-              If you only know that batch records, SOP revisions, audit preparation or document
-              review are slipping, that is enough to start. The first step is defining whether the
-              requirement is a good fit and what support would actually help.
-            </p>
-          </div>
-          <div className="hero-actions">
-            <TrackableLink
-              className="button button-primary"
-              eventLabel="first engagement consultation"
-              eventName="consultation_click"
-              href="/contact"
-            >
-              Book a Scope Call
-            </TrackableLink>
-            <TrackableLink
-              className="button button-whatsapp"
-              eventLabel="first engagement whatsapp"
-              eventName="whatsapp_click"
-              href={whatsappHref}
-            >
-              <WhatsAppIcon />
-              WhatsApp Saumya
-            </TrackableLink>
-          </div>
-        </div>
-      </section>
-
       <section className="section contact-closing-section">
-        <div className="container section-shell section-shell-cream contact-closing-grid">
+        <div className="container contact-closing-grid contact-closing-premium">
           <div>
             <p className="eyebrow">Contact</p>
-            <h2>Tell Saumya what is slowing the QA process.</h2>
+            <h2>Tell Saumya what is stuck. The message opens directly in WhatsApp.</h2>
             <p className="section-description">
-              Share the document type, backlog, review issue or audit pressure point. The first
-              step is simply deciding whether the requirement is a good fit.
+              Share the document type, backlog, review issue or audit pressure point. If you use
+              the form, the details are formatted into a WhatsApp message for Saumya at
+              +91 87070 94072.
             </p>
-            <p className="contact-location-line">Surat · Gujarat · Remote support</p>
+            <p className="contact-location-line">Surat · Gujarat · Remote support across India</p>
+            <div className="contact-closing-actions">
+              <TrackableLink
+                className="button button-primary"
+                eventLabel="closing consultation"
+                eventName="consultation_click"
+                href="/contact"
+              >
+                Fill the quick form
+              </TrackableLink>
+              <TrackableLink
+                className="button button-whatsapp"
+                eventLabel="closing whatsapp"
+                eventName="whatsapp_click"
+                href={whatsappHref}
+              >
+                <WhatsAppIcon />
+                WhatsApp Saumya
+              </TrackableLink>
+              <TrackableLink
+                className="button button-secondary"
+                eventLabel="closing call"
+                eventName="call_click"
+                href={phoneHref}
+              >
+                Call Saumya
+              </TrackableLink>
+            </div>
           </div>
-          <div className="contact-closing-actions">
-            <TrackableLink
-              className="button button-primary"
-              eventLabel="closing consultation"
-              eventName="consultation_click"
-              href="/contact"
-            >
-              Book a Scope Call
-            </TrackableLink>
-            <TrackableLink
-              className="button button-whatsapp"
-              eventLabel="closing whatsapp"
-              eventName="whatsapp_click"
-              href={whatsappHref}
-            >
-              <WhatsAppIcon />
-              WhatsApp Saumya
-            </TrackableLink>
-            <TrackableLink
-              className="button button-secondary"
-              eventLabel="closing call"
-              eventName="call_click"
-              href={phoneHref}
-            >
-              Call
-            </TrackableLink>
-          </div>
+          <figure className="contact-proof-image">
+            <Image
+              alt="Saumya Dubey at a documentation desk during QA work experience."
+              className="experience-image"
+              height={1086}
+              sizes="(max-width: 980px) 100vw, 34vw"
+              src={documentationDeskImage}
+              width={1448}
+            />
+            <figcaption>Founder-led review support for documentation-heavy teams</figcaption>
+          </figure>
         </div>
       </section>
     </>

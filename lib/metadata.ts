@@ -7,15 +7,18 @@ interface MetadataInput {
   title: string;
   description: string;
   path?: string;
+  keywords?: string[];
 }
 
 export const createMetadata = ({
   title,
   description,
   path = "/",
+  keywords,
 }: MetadataInput): Metadata => ({
   title,
   description,
+  keywords,
   alternates: {
     canonical: absoluteUrl(path),
   },

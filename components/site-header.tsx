@@ -1,5 +1,4 @@
 import { siteConfig } from "@/data/site-config";
-
 import { TrackableLink } from "./trackable-link";
 
 export function SiteHeader() {
@@ -27,7 +26,7 @@ export function SiteHeader() {
           eventName="consultation_click"
           href="/contact"
         >
-          Book a Scope Call
+          Book a consultation
         </TrackableLink>
 
         <details className="mobile-nav">
@@ -40,11 +39,11 @@ export function SiteHeader() {
             ))}
             <TrackableLink
               className="button button-header"
-              eventLabel="mobile consultation"
+              eventLabel="mobile menu consultation"
               eventName="consultation_click"
               href="/contact"
             >
-              Book a Scope Call
+              Book a consultation
             </TrackableLink>
           </div>
         </details>

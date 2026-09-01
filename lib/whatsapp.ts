@@ -46,10 +46,10 @@ export function formatWhatsappEnquiry(fields: EnquiryFields) {
   const details = sanitizeText(fields.message);
 
   const blocks = [
-    "🟢 *New enquiry from your website*",
+    "*New enquiry from your website*",
     detailLines.join("\n"),
     details ? `*Details*\n${details}` : "",
-    "— Sent from the Saumya Dubey website",
+    "- Sent from the Saumya Dubey website",
   ].filter((block) => block.length > 0);
 
   // Blank line between blocks for readable spacing in the chat.

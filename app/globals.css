@@ -4,29 +4,29 @@
   --font-serif: "IBM Plex Serif", "Iowan Old Style", Georgia, serif;
   --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
-  --background: #f7f3e9;
-  --surface: #fffdf7;
-  --surface-soft: #eef3ea;
-  --surface-sage: #dce7db;
-  --text: #13221e;
-  --text-muted: #4f5f58;
-  --text-soft: #859187;
-  --forest: #123c32;
-  --forest-deep: #0c2b24;
+  --background: #f5f0e4;
+  --surface: #fffaf0;
+  --surface-soft: #edf4e8;
+  --surface-sage: #d7e4d4;
+  --text: #10211b;
+  --text-muted: #485a51;
+  --text-soft: #829086;
+  --forest: #0d4a39;
+  --forest-deep: #082b22;
   --forest-soft: rgba(18, 60, 50, 0.08);
   --line: rgba(19, 34, 30, 0.12);
   --line-strong: rgba(19, 34, 30, 0.2);
   --brass: #b08a4a;
-  --accent-red: #a9843f;
-  --accent-red-soft: rgba(18, 60, 50, 0.16);
-  --accent-lime: #d8bd7f;
-  --accent-lime-soft: rgba(181, 154, 98, 0.16);
+  --accent-red: #d05f4f;
+  --accent-red-soft: rgba(208, 95, 79, 0.14);
+  --accent-lime: #9ce37d;
+  --accent-lime-soft: rgba(156, 227, 125, 0.16);
   --error: #a54a2a;
   --shadow-soft: 0 18px 45px rgba(19, 34, 30, 0.08);
   --shadow-image: 0 22px 54px rgba(19, 34, 30, 0.12);
-  --radius-lg: 34px;
+  --radius-lg: 28px;
   --radius-md: 18px;
-  --radius-sm: 12px;
+  --radius-sm: 10px;
   --max-width: 1240px;
 }
 
@@ -232,6 +232,13 @@ li {
   background: rgba(255, 253, 247, 0.88);
   color: var(--text);
   box-shadow: inset 0 0 0 1px rgba(18, 60, 50, 0.08);
+}
+
+.button-light {
+  background: #f8f3e7;
+  color: var(--forest-deep);
+  border-color: rgba(156, 227, 125, 0.55);
+  box-shadow: 0 16px 34px rgba(8, 43, 34, 0.24);
 }
 
 .button-header {
@@ -1369,13 +1376,13 @@ li {
 /* Persistent, always-visible WhatsApp handle on desktop / tablet. */
 .floating-whatsapp {
   position: fixed;
-  right: clamp(16px, 3vw, 32px);
-  bottom: clamp(16px, 3vw, 32px);
+  right: clamp(14px, 2vw, 24px);
+  bottom: clamp(14px, 2vw, 24px);
   z-index: 45;
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 18px 10px 12px;
+  padding: 8px 14px 8px 10px;
   border-radius: 999px;
   background: #25d366;
   color: #05391d;
@@ -1399,8 +1406,8 @@ li {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.55);
   color: #128c3f;
@@ -1441,13 +1448,13 @@ li {
 }
 
 .floating-whatsapp-label strong {
-  font-size: 0.94rem;
+  font-size: 0.86rem;
   font-weight: 700;
 }
 
 .floating-whatsapp-label small {
   color: rgba(5, 57, 29, 0.72);
-  font-size: 0.74rem;
+  font-size: 0.68rem;
 }
 
 .contact-form-note {
@@ -1468,9 +1475,293 @@ li {
   margin-top: 18px;
 }
 
+.hero-name {
+  margin: 0 0 12px;
+  color: var(--text-soft);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+}
+
+.hero-credential-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.hero-credential-row span {
+  padding: 10px 14px;
+  border: 1px solid rgba(13, 74, 57, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.78);
+  color: var(--forest-deep);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.founder-proof-grid,
+.problem-layout,
+.services-editorial-grid,
+.real-experience-grid,
+.why-hire-layout,
+.engagement-grid {
+  display: grid;
+  gap: clamp(32px, 5vw, 70px);
+}
+
+.founder-proof-grid {
+  grid-template-columns: minmax(0, 0.92fr) minmax(300px, 0.68fr);
+  align-items: center;
+}
+
+.founder-proof-copy,
+.services-editorial-copy,
+.real-experience-copy {
+  max-width: 620px;
+}
+
+.proof-portrait,
+.experience-image-frame,
+.contact-proof-image {
+  margin: 0;
+}
+
+.proof-portrait {
+  position: relative;
+  padding: 14px;
+  border: 1px solid rgba(13, 74, 57, 0.22);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, rgba(255, 250, 240, 0.94), rgba(237, 244, 232, 0.72));
+}
+
+.proof-portrait::before {
+  content: "";
+  position: absolute;
+  inset: auto 28px -16px 28px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-red), var(--brass), var(--accent-lime));
+}
+
+.proof-portrait-image {
+  width: 100%;
+  min-height: 520px;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: 58% center;
+}
+
+figcaption {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.problem-section {
+  background:
+    linear-gradient(180deg, rgba(237, 244, 232, 0.52), rgba(255, 250, 240, 0.72)),
+    var(--background);
+}
+
+.problem-layout {
+  grid-template-columns: minmax(280px, 0.58fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.problem-card-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(13, 74, 57, 0.18);
+}
+
+.problem-card-item {
+  min-height: auto;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 24px;
+  padding: 28px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(13, 74, 57, 0.18);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.problem-card-item::after,
+.problem-card-line {
+  display: none;
+}
+
+.problem-card-item:hover {
+  transform: none;
+  border-color: rgba(13, 74, 57, 0.36);
+  box-shadow: none;
+}
+
+.problem-card-index {
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border-color: rgba(208, 95, 79, 0.52);
+  background: var(--accent-red-soft);
+  color: var(--forest-deep);
+}
+
+.problem-card-item h3 {
+  max-width: 22ch;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.45rem, 2.1vw, 2.05rem);
+}
+
+.problem-signal {
+  color: var(--forest);
+  font-weight: 700;
+}
+
+.services-editorial-grid {
+  grid-template-columns: minmax(280px, 0.48fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.service-signature-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-signature-card {
+  min-height: 250px;
+  padding: 24px;
+  border: 1px solid rgba(156, 227, 125, 0.24);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 240, 0.08), rgba(255, 250, 240, 0.02)),
+    rgba(255, 255, 255, 0.04);
+}
+
+.service-signature-card h3,
+.service-signature-card p,
+.services-editorial-copy p,
+.services-editorial-copy h2 {
+  color: #f8f3e7;
+}
+
+.service-signature-card p {
+  color: rgba(248, 243, 231, 0.76);
+}
+
+.service-signature {
+  margin-bottom: 18px;
+  color: var(--accent-lime) !important;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.section-forest {
+  background:
+    radial-gradient(circle at 86% 12%, rgba(156, 227, 125, 0.12), transparent 24%),
+    linear-gradient(160deg, var(--forest-deep), var(--forest));
+}
+
+.real-experience-grid {
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.78fr);
+  align-items: start;
+}
+
+.experience-image-stack {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.52fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+
+.experience-image-frame {
+  padding: 12px;
+  border: 1px solid rgba(13, 74, 57, 0.18);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 250, 240, 0.82);
+  box-shadow: 0 16px 40px rgba(16, 33, 27, 0.09);
+}
+
+.experience-image-tall {
+  transform: translateY(34px);
+}
+
+.experience-image {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.experience-image-tall .experience-image {
+  aspect-ratio: 0.64;
+  object-position: center top;
+}
+
+.why-hire-layout {
+  grid-template-columns: minmax(280px, 0.76fr) minmax(0, 1fr);
+  align-items: start;
+  padding: clamp(36px, 6vw, 70px);
+  border-left: 4px solid var(--accent-red);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 240, 0.96), rgba(237, 244, 232, 0.72)),
+    var(--surface);
+}
+
+.why-hire-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(13, 74, 57, 0.16);
+}
+
+.why-hire-list p {
+  margin: 0;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(13, 74, 57, 0.16);
+  color: var(--text);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  font-weight: 600;
+}
+
+.engagement-grid {
+  grid-template-columns: minmax(280px, 0.52fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.contact-closing-premium {
+  padding: clamp(32px, 5vw, 58px);
+  border: 1px solid rgba(13, 74, 57, 0.18);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at top right, rgba(156, 227, 125, 0.15), transparent 32%),
+    linear-gradient(135deg, rgba(255, 250, 240, 0.96), rgba(237, 244, 232, 0.86));
+}
+
+.contact-proof-image {
+  align-self: stretch;
+}
+
+.contact-proof-image .experience-image {
+  height: min(460px, 42vw);
+  min-height: 360px;
+  object-position: 62% center;
+}
+
 @media (max-width: 1100px) {
   .hero-luxury-grid,
   .editorial-split,
+  .founder-proof-grid,
+  .problem-layout,
+  .services-editorial-grid,
+  .real-experience-grid,
+  .why-hire-layout,
+  .engagement-grid,
   .industry-story-wide,
   .contact-closing-grid,
   .contact-page-grid,
@@ -1511,6 +1802,7 @@ li {
   .industry-story-grid,
   .principles-grid,
   .process-line-layout,
+  .service-signature-list,
   .signature-process-words,
   .signature-process-notes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1544,6 +1836,14 @@ li {
 
   .hero-luxury-grid,
   .form-grid,
+  .founder-proof-grid,
+  .problem-layout,
+  .services-editorial-grid,
+  .real-experience-grid,
+  .why-hire-layout,
+  .engagement-grid,
+  .service-signature-list,
+  .experience-image-stack,
   .industry-story-grid,
   .process-line-layout,
   .signature-process-words,
@@ -1591,13 +1891,14 @@ li {
   }
 
   .problem-card-item {
+    grid-template-columns: minmax(0, 1fr);
     min-height: auto;
-    padding: 24px;
+    padding: 24px 0;
   }
 
   .problem-card-item h3 {
     max-width: none;
-    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    font-size: clamp(1.45rem, 8vw, 2.1rem);
   }
 
   .problem-card-item p {
@@ -1607,6 +1908,19 @@ li {
   .service-summary-main,
   .career-timeline-row {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .proof-portrait-image {
+    min-height: 420px;
+  }
+
+  .experience-image-tall {
+    transform: none;
+  }
+
+  .contact-proof-image .experience-image {
+    height: auto;
+    min-height: 280px;
   }
 
   .career-timeline-line {

@@ -57,7 +57,7 @@ export function ContactForm({ whatsappHref }: ContactFormProps) {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    // Honeypot — silently ignore bots without giving them feedback.
+    // Honeypot: silently ignore bots without giving them feedback.
     if (String(formData.get("website") || "")) {
       return;
     }
@@ -223,7 +223,7 @@ export function ContactForm({ whatsappHref }: ContactFormProps) {
         {state.pending ? "Opening WhatsApp..." : "Send to Saumya on WhatsApp"}
       </button>
       <p className="contact-form-note">
-        Your details open in WhatsApp, neatly formatted — tap send and Saumya
+        Your details open in WhatsApp, neatly formatted. Tap send and Saumya
         gets it directly. No account signup, no waiting.
       </p>
     </form>
