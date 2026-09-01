@@ -2,13 +2,18 @@ import { siteConfig } from "@/data/site-config";
 
 const clean = (value?: string | null) => value?.trim() ?? "";
 
+const DEFAULT_SITE_URL = "https://saumyadubey.vercel.app";
+const configuredSiteUrl = clean(process.env.SITE_URL);
+
 // Direct-contact defaults so every WhatsApp / call link works out of the box.
 // Override in production via environment variables if the number ever changes.
 const DEFAULT_WHATSAPP = "918707094072";
 const DEFAULT_PHONE = "+918707094072";
 
 export const contactConfig = {
-  siteUrl: clean(process.env.SITE_URL) || "http://localhost:3000",
+  siteUrl: configuredSiteUrl.includes("saumya-dubey.vercel.app")
+    ? DEFAULT_SITE_URL
+    : configuredSiteUrl || DEFAULT_SITE_URL,
   phone: clean(process.env.PHONE_NUMBER) || DEFAULT_PHONE,
   whatsapp: clean(process.env.WHATSAPP_NUMBER) || DEFAULT_WHATSAPP,
   email: clean(process.env.BUSINESS_EMAIL),
