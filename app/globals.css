@@ -1652,6 +1652,46 @@ figcaption {
   color: rgba(248, 243, 231, 0.76);
 }
 
+.service-outcome-box {
+  margin-top: 22px;
+  padding: 16px;
+  border-left: 3px solid var(--accent-lime);
+  background: rgba(156, 227, 125, 0.08);
+}
+
+.service-outcome-box strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent-lime);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.service-outcome-box p {
+  margin: 0;
+  color: rgba(248, 243, 231, 0.9);
+  line-height: 1.6;
+}
+
+.service-deliverable-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-deliverable-list li {
+  padding: 7px 10px;
+  border: 1px solid rgba(248, 243, 231, 0.18);
+  border-radius: 999px;
+  color: rgba(248, 243, 231, 0.86);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
 .service-signature {
   margin-bottom: 18px;
   color: var(--accent-lime) !important;

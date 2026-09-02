@@ -8,12 +8,9 @@ import { experienceTimeline, processSteps, siteConfig } from "@/data/site-config
 import { createMetadata } from "@/lib/metadata";
 import { phoneHref, whatsappHref } from "@/lib/site";
 
-const cleanroomStandingImage =
-  "/images/real-experience/codex-clipboard-19fc0b89-6b54-4a69-a6a0-d03c92ba830a.png";
-const cleanroomDeskImage =
-  "/images/real-experience/codex-clipboard-dcb72fe3-90d4-494d-9631-05ecea929dd6.png";
-const documentationDeskImage =
-  "/images/real-experience/codex-clipboard-d7bb4d8b-be8a-4fd3-8957-134ba09e6189.png";
+const experienceImagePrimary = "/images/qa-audit.png";
+const experienceImageSecondary = "/images/coa-specification.png";
+const contactImage = "/images/document-review.png";
 
 const problemItems = [
   {
@@ -44,36 +41,48 @@ const serviceItems = [
     description:
       "Extra QA review capacity for teams that need records checked carefully, consistently and without slowing internal release work.",
     signature: "Final review · Backlog reduction · QA bandwidth",
+    deliverables: ["BMR / BPR review support", "Missing-entry checks", "Clear review observations"],
+    value: "Helps reduce release delays and gives internal QA a cleaner handover.",
   },
   {
     title: "SOP revision and document cleanup",
     description:
       "Practical support for SOP updates, formatting consistency, document structure and controlled cleanup where procedures have become hard to maintain.",
     signature: "Revision discipline · Document control · Cleaner handover",
+    deliverables: ["SOP revision support", "Format and numbering cleanup", "Procedure clarity review"],
+    value: "Makes SOPs easier for teams to follow, control and defend during review.",
   },
   {
     title: "Internal audit readiness",
     description:
       "A focused outside review for internal audits, self-inspections and preparation work where the team needs gap visibility before pressure builds.",
     signature: "Gap review · Self-inspection · Practical next steps",
+    deliverables: ["Document gap review", "Self-inspection support", "Action-point preparation"],
+    value: "Turns audit anxiety into a practical list of issues the team can act on.",
   },
   {
     title: "COA, specifications, STP and TDS review",
     description:
       "Technical document review for teams that need stronger consistency, clearer wording and fewer avoidable corrections.",
     signature: "Technical clarity · Consistency · Detail review",
+    deliverables: ["COA review", "Specification checks", "STP / TDS consistency review"],
+    value: "Reduces avoidable back-and-forth caused by unclear or inconsistent technical documents.",
   },
   {
     title: "Quality-system and change-control support",
     description:
       "Scoped help for quality-system records, change-control documentation and supporting files that need tighter structure and follow-through.",
     signature: "Structure · Control · Follow-through",
+    deliverables: ["Change-control support", "Quality record cleanup", "Follow-through tracking"],
+    value: "Keeps quality-system work from becoming scattered, delayed or hard to trace.",
   },
   {
     title: "Ayurvedic and herbal documentation support",
     description:
       "A strong fit for Ayurveda-linked and herbal manufacturers where formal QA documentation still needs practical product-context understanding.",
     signature: "Ayurveda fit · Herbal context · QA documentation",
+    deliverables: ["Ayurvedic documentation review", "Herbal product context support", "QA file cleanup"],
+    value: "Brings pharma-style documentation discipline without losing Ayurveda-linked context.",
   },
 ];
 
@@ -232,6 +241,15 @@ export default function HomePage() {
                 <p className="service-signature">{item.signature}</p>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
+                <div className="service-outcome-box">
+                  <strong>What the company gets</strong>
+                  <p>{item.value}</p>
+                </div>
+                <ul className="service-deliverable-list">
+                  {item.deliverables.map((deliverable) => (
+                    <li key={deliverable}>{deliverable}</li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
@@ -267,25 +285,25 @@ export default function HomePage() {
           <div className="experience-image-stack">
             <figure className="experience-image-frame experience-image-tall">
               <Image
-                alt="Saumya Dubey in a cleanroom uniform during previous QA experience."
+                alt="Internal QA audit and self-inspection review in a pharmaceutical setting."
                 className="experience-image"
-                height={1824}
+                height={1024}
                 sizes="(max-width: 980px) 100vw, 26vw"
-                src={cleanroomStandingImage}
-                width={862}
+                src={experienceImagePrimary}
+                width={1536}
               />
-              <figcaption>Previous QA environment exposure</figcaption>
+              <figcaption>Audit-readiness and QA system review context</figcaption>
             </figure>
             <figure className="experience-image-frame">
               <Image
-                alt="Saumya Dubey working with documentation in a QA workplace."
+                alt="COA and specification review support in a QA laboratory."
                 className="experience-image"
-                height={1086}
+                height={1024}
                 sizes="(max-width: 980px) 100vw, 32vw"
-                src={cleanroomDeskImage}
-                width={1448}
+                src={experienceImageSecondary}
+                width={1536}
               />
-              <figcaption>Documentation and record review context</figcaption>
+              <figcaption>Specification, COA, STP and technical document support</figcaption>
             </figure>
           </div>
         </div>
@@ -364,12 +382,12 @@ export default function HomePage() {
           </div>
           <figure className="contact-proof-image">
             <Image
-              alt="Saumya Dubey at a documentation desk during QA work experience."
+              alt="Saumya Dubey reviewing QA documentation and production records."
               className="experience-image"
-              height={1086}
+              height={1024}
               sizes="(max-width: 980px) 100vw, 34vw"
-              src={documentationDeskImage}
-              width={1448}
+              src={contactImage}
+              width={1536}
             />
             <figcaption>Founder-led review support for documentation-heavy teams</figcaption>
           </figure>
