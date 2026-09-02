@@ -8,9 +8,18 @@ import { experienceTimeline, processSteps, siteConfig } from "@/data/site-config
 import { createMetadata } from "@/lib/metadata";
 import { phoneHref, whatsappHref } from "@/lib/site";
 
-const experienceImagePrimary = "/images/qa-audit.png";
-const experienceImageSecondary = "/images/coa-specification.png";
-const contactImage = "/images/document-review.png";
+const cleanroomReviewImage =
+  "/images/selected-gallery/codex-clipboard-26776d54-d554-4f6e-83e2-d411db7b49da.png";
+const manufacturingImage =
+  "/images/selected-gallery/codex-clipboard-03c250b3-128b-4fab-a8e0-22eca44ed9e7.png";
+const heroPortraitImage =
+  "/images/selected-gallery/codex-clipboard-e1062b0c-5ea4-47b9-a0d3-761672393265.png";
+const officePortraitImage =
+  "/images/selected-gallery/codex-clipboard-2ee06e77-2ba9-4652-911f-95719619aa2f.png";
+const labReviewImage =
+  "/images/selected-gallery/codex-clipboard-db6ad18e-20bd-439e-bde7-a4fc25efc08e.png";
+const documentReviewImage =
+  "/images/selected-gallery/codex-clipboard-882f0e9e-d292-402f-bc93-f860376a1d20.png";
 
 const problemItems = [
   {
@@ -148,7 +157,7 @@ export default function HomePage() {
                 height={1024}
                 priority
                 sizes="(max-width: 980px) 100vw, 42vw"
-                src="/images/saumya-hero.png"
+                src={heroPortraitImage}
                 width={1536}
               />
             </div>
@@ -183,7 +192,7 @@ export default function HomePage() {
               className="proof-portrait-image"
               height={1024}
               sizes="(max-width: 980px) 100vw, 36vw"
-              src="/images/saumya-about.png"
+              src={officePortraitImage}
               width={1536}
             />
             <figcaption>
@@ -282,28 +291,39 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <div className="experience-image-stack">
-            <figure className="experience-image-frame experience-image-tall">
+          <div className="experience-image-stack experience-image-stack-wide">
+            <figure className="experience-image-frame">
               <Image
-                alt="Internal QA audit and self-inspection review in a pharmaceutical setting."
+                alt="Quality assurance review inside a controlled manufacturing area."
                 className="experience-image"
-                height={1024}
-                sizes="(max-width: 980px) 100vw, 26vw"
-                src={experienceImagePrimary}
-                width={1536}
+                height={900}
+                sizes="(max-width: 980px) 100vw, 30vw"
+                src={cleanroomReviewImage}
+                width={1440}
               />
-              <figcaption>Audit-readiness and QA system review context</figcaption>
+              <figcaption>QA review inside controlled manufacturing environments</figcaption>
+            </figure>
+            <figure className="experience-image-frame">
+              <Image
+                alt="Pharmaceutical manufacturing floor with controlled processing equipment."
+                className="experience-image"
+                height={941}
+                sizes="(max-width: 980px) 100vw, 30vw"
+                src={manufacturingImage}
+                width={1672}
+              />
+              <figcaption>Manufacturing-process context for GMP documentation support</figcaption>
             </figure>
             <figure className="experience-image-frame">
               <Image
                 alt="COA and specification review support in a QA laboratory."
                 className="experience-image"
                 height={1024}
-                sizes="(max-width: 980px) 100vw, 32vw"
-                src={experienceImageSecondary}
+                sizes="(max-width: 980px) 100vw, 30vw"
+                src={labReviewImage}
                 width={1536}
               />
-              <figcaption>Specification, COA, STP and technical document support</figcaption>
+              <figcaption>COA, specification, STP and technical document support</figcaption>
             </figure>
           </div>
         </div>
@@ -386,7 +406,7 @@ export default function HomePage() {
               className="experience-image"
               height={1024}
               sizes="(max-width: 980px) 100vw, 34vw"
-              src={contactImage}
+              src={documentReviewImage}
               width={1536}
             />
             <figcaption>Founder-led review support for documentation-heavy teams</figcaption>

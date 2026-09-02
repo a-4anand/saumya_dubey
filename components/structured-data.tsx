@@ -48,7 +48,9 @@ export function StructuredData() {
         telephone: contactConfig.phone || undefined,
         email: contactConfig.email || undefined,
         url: absoluteUrl("/"),
-        image: absoluteUrl("/images/saumya-hero.png"),
+        image: absoluteUrl(
+          "/images/selected-gallery/codex-clipboard-e1062b0c-5ea4-47b9-a0d3-761672393265.png",
+        ),
         priceRange: "$$",
         address: {
           "@type": "PostalAddress",
@@ -78,7 +80,9 @@ export function StructuredData() {
         "@id": absoluteUrl("/#person"),
         name: siteConfig.name,
         jobTitle: siteConfig.title,
-        image: absoluteUrl("/images/saumya-about.png"),
+        image: absoluteUrl(
+          "/images/selected-gallery/codex-clipboard-2ee06e77-2ba9-4652-911f-95719619aa2f.png",
+        ),
         url: absoluteUrl("/about"),
         knowsAbout: [
           "Quality assurance",

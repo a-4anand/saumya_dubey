@@ -113,7 +113,7 @@ export function LocalSeoPageView({ page }: LocalSeoPageViewProps) {
               className="proof-portrait-image"
               height={1024}
               sizes="(max-width: 980px) 100vw, 42vw"
-              src="/images/saumya-about.png"
+              src="/images/selected-gallery/codex-clipboard-2ee06e77-2ba9-4652-911f-95719619aa2f.png"
               width={1536}
             />
             <figcaption>Independent QA support for documentation-heavy manufacturing teams.</figcaption>
