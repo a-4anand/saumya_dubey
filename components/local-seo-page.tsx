@@ -38,7 +38,7 @@ export function LocalSeoPageView({ page }: LocalSeoPageViewProps) {
                 href={buildWhatsappHref(message)}
               >
                 <WhatsAppIcon />
-                WhatsApp Saumya
+                WhatsApp Qorivara
               </TrackableLink>
             </div>
           </div>

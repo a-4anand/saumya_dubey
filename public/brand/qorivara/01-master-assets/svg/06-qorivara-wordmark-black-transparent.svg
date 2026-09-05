@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1600"
+   height="320"
+   viewBox="0 0 1600 320"
+   shape-rendering="geometricPrecision"
+   version="1.1"
+   id="svg38"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs42" />
+  <g
+     fill="#000000"
+     transform="matrix(1.86,0,0,1.86,70.88,55)"
+     id="g36">
+    <g
+       id="g6">
+      <path
+         fill-rule="evenodd"
+         d="M 42,0 C 16.5,0 0,18.5 0,50 0,81.5 16.5,100 42,100 67.5,100 84,81.5 84,50 84,18.5 67.5,0 42,0 Z m 0,14 C 58.5,14 69,27 69,50 69,73 58.5,86 42,86 25.5,86 15,73 15,50 15,27 25.5,14 42,14 Z"
+         id="path2" />
+      <path
+         d="m 47,67 h 14 l 26,41 H 70 Z"
+         id="path4" />
+    </g>
+    <g
+       transform="translate(114)"
+       id="g10">
+      <path
+         fill-rule="evenodd"
+         d="M 42,0 C 16.5,0 0,18.5 0,50 0,81.5 16.5,100 42,100 67.5,100 84,81.5 84,50 84,18.5 67.5,0 42,0 Z m 0,14 C 58.5,14 69,27 69,50 69,73 58.5,86 42,86 25.5,86 15,73 15,50 15,27 25.5,14 42,14 Z"
+         id="path8" />
+    </g>
+    <g
+       transform="translate(222)"
+       id="g14">
+      <path
+         fill-rule="evenodd"
+         d="m 0,0 h 43 c 21,0 33,11 33,31 0,16 -9,26 -25,30 l 29,39 H 62 L 34,63 H 15 v 37 H 0 Z M 15,13 V 50 H 41 C 54,50 61,43 61,31 61,19 54,13 41,13 Z"
+         id="path12" />
+    </g>
+    <g
+       transform="translate(326)"
+       id="g18">
+      <path
+         d="M 3,0 H 17 V 100 H 3 Z"
+         id="path16" />
+    </g>
+    <g
+       transform="translate(370)"
+       id="g22">
+      <path
+         d="M 0,0 H 16 L 43,80 70,0 H 86 L 51,100 H 35 Z"
+         id="path20" />
+    </g>
+    <g
+       transform="translate(480)"
+       id="g26">
+      <path
+         fill-rule="evenodd"
+         d="M 0,100 35,0 H 53 L 88,100 H 72 L 63,74 H 25 l -8,26 z M 30,60 H 58 L 44,19 Z"
+         id="path24" />
+    </g>
+    <g
+       transform="translate(592)"
+       id="g30">
+      <path
+         fill-rule="evenodd"
+         d="m 0,0 h 43 c 21,0 33,11 33,31 0,16 -9,26 -25,30 l 29,39 H 62 L 34,63 H 15 v 37 H 0 Z M 15,13 V 50 H 41 C 54,50 61,43 61,31 61,19 54,13 41,13 Z"
+         id="path28" />
+    </g>
+    <g
+       transform="translate(696)"
+       id="g34">
+      <path
+         fill-rule="evenodd"
+         d="M 0,100 35,0 H 53 L 88,100 H 72 L 63,74 H 25 l -8,26 z M 30,60 H 58 L 44,19 Z"
+         id="path32" />
+    </g>
+  </g>
+</svg>

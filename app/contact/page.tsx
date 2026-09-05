@@ -12,7 +12,7 @@ import {
 export const metadata = createMetadata({
   title: "Contact",
   description:
-    "Contact Saumya Dubey to discuss QA backlog, documentation cleanup, audit-readiness or overflow support requirements.",
+    "Contact Qorivara Life Sciences to discuss QA backlog, documentation cleanup, audit-readiness or overflow support requirements.",
   path: "/contact",
 });
 
@@ -22,11 +22,10 @@ export default function ContactPage() {
       <section className="page-hero-luxury">
         <div className="container narrow">
           <p className="eyebrow">Contact</p>
-          <h1>Tell Saumya where QA work is slowing the business.</h1>
+          <h1>Have a QA requirement?</h1>
           <p className="body-large">
-            Share the backlog, review issue, document type or audit-readiness pressure point. The
-            first step is deciding whether the requirement is a good fit and what support would
-            help most.
+            Tell Qorivara what you are working on and what support you need. Saumya will help
+            clarify whether the requirement is a good fit and what scope would help most.
           </p>
         </div>
       </section>
@@ -47,7 +46,7 @@ export default function ContactPage() {
                 href={whatsappHref}
               >
                 <WhatsAppIcon />
-                WhatsApp Saumya
+                WhatsApp Qorivara
               </TrackableLink>
               <TrackableLink
                 className="button button-secondary"
@@ -59,7 +58,7 @@ export default function ContactPage() {
               </TrackableLink>
             </div>
             <p className="contact-reassurance">
-              Fastest way to reach Saumya — messages usually get a same-day
+              Fastest way to reach Qorivara — messages usually get a same-day
               reply.
             </p>
 
@@ -74,7 +73,7 @@ export default function ContactPage() {
               </article>
               <article className="contact-method">
                 <span>Email</span>
-                <strong>{contactConfig.email || "Set `BUSINESS_EMAIL` before launch."}</strong>
+                <strong>{contactConfig.email}</strong>
                 <TrackableLink className="service-link" href={emailHref}>
                   Send email
                 </TrackableLink>

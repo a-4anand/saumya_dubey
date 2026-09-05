@@ -75,7 +75,7 @@ export const localSeoPages: LocalSeoPage[] = [
       "Ayurvedic and herbal documentation support",
     ],
     proof:
-      "Her previous QA path includes Mepromax Lifesciences, Ronald Pharmaceutical and DAC55 Laboratory before building an independent consulting practice.",
+      "Her previous QA path includes Mepromax Lifescience, Unilever and DAC55 before founding Qorivara Life Sciences.",
   },
   {
     slug: "gmp-consultant-surat",

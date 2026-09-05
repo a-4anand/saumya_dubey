@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { siteConfig } from "@/data/site-config";
 import { contactConfig, emailHref, phoneHref, whatsappHref } from "@/lib/site";
 
@@ -8,8 +10,14 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div>
-          <p className="eyebrow">Saumya Dubey</p>
-          <h2 className="footer-title">{siteConfig.headerDescriptor}</h2>
+          <Image
+            alt="Qorivara Life Sciences"
+            className="footer-logo"
+            height={780}
+            src="/brand/qorivara/03-platform-exports/svg/26b-website-footer-cream.svg"
+            width={3000}
+          />
+          <h2 className="footer-title">{siteConfig.descriptor}</h2>
           <p className="footer-copy footer-emphasis">{siteConfig.serviceDescriptor}</p>
           <p className="footer-copy">{siteConfig.location}</p>
           <p className="footer-copy">
@@ -38,10 +46,10 @@ export function SiteFooter() {
               eventName="whatsapp_click"
               href={whatsappHref}
             >
-              WhatsApp Saumya
+              WhatsApp Qorivara
             </TrackableLink>
             <TrackableLink className="footer-link" href="/contact">
-              Request a scope discussion
+              Discuss a requirement
             </TrackableLink>
             <TrackableLink
               className="footer-link"

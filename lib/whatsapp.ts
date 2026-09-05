@@ -24,7 +24,7 @@ export interface EnquiryFields {
 /**
  * Formats a contact enquiry into a clean, WhatsApp-friendly message.
  * WhatsApp renders *bold* and newlines, so the result reads as a tidy,
- * scannable brief the moment it lands in Saumya's chat.
+ * scannable brief the moment it lands in Qorivara's chat.
  */
 export function formatWhatsappEnquiry(fields: EnquiryFields) {
   const rows: Array<[string, string]> = [
@@ -49,7 +49,7 @@ export function formatWhatsappEnquiry(fields: EnquiryFields) {
     "*New enquiry from your website*",
     detailLines.join("\n"),
     details ? `*Details*\n${details}` : "",
-    "- Sent from the Saumya Dubey website",
+    "- Sent from the Qorivara Life Sciences website",
   ].filter((block) => block.length > 0);
 
   // Blank line between blocks for readable spacing in the chat.

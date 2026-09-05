@@ -36,16 +36,60 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: absoluteUrl(
+          "/brand/qorivara/02-colorway-exports/png/qorivara-full-horizontal-forest-on-warm-cream.png",
+        ),
+        width: 4096,
+        height: 1229,
+        alt: "Qorivara Life Sciences - Quality, Compliance, Documentation",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.title}`,
     description: siteConfig.description,
+    images: [
+      absoluteUrl(
+        "/brand/qorivara/02-colorway-exports/png/qorivara-full-horizontal-forest-on-warm-cream.png",
+      ),
+    ],
+  },
+  icons: {
+    icon: [
+      {
+        url: "/brand/qorivara/04-favicon/qorivara-favicon.svg",
+        type: "image/svg+xml",
+      },
+      {
+        url: "/brand/qorivara/04-favicon/qorivara-favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/brand/qorivara/04-favicon/qorivara-favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/brand/qorivara/04-favicon/qorivara-favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "/brand/qorivara/04-favicon/qorivara-favicon-180x180.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f6f5f0",
+  themeColor: "#123C32",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

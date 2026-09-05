@@ -2,7 +2,7 @@ import { siteConfig } from "@/data/site-config";
 
 const clean = (value?: string | null) => value?.trim() ?? "";
 
-const DEFAULT_SITE_URL = "https://saumyadubey.vercel.app";
+const DEFAULT_SITE_URL = "https://www.qorivara.com";
 const configuredSiteUrl = clean(process.env.SITE_URL);
 
 // Direct-contact defaults so every WhatsApp / call link works out of the box.
@@ -11,12 +11,12 @@ const DEFAULT_WHATSAPP = "918707094072";
 const DEFAULT_PHONE = "+918707094072";
 
 export const contactConfig = {
-  siteUrl: configuredSiteUrl.includes("saumya-dubey.vercel.app")
+  siteUrl: configuredSiteUrl.includes("vercel.app")
     ? DEFAULT_SITE_URL
     : configuredSiteUrl || DEFAULT_SITE_URL,
   phone: clean(process.env.PHONE_NUMBER) || DEFAULT_PHONE,
   whatsapp: clean(process.env.WHATSAPP_NUMBER) || DEFAULT_WHATSAPP,
-  email: clean(process.env.BUSINESS_EMAIL),
+  email: clean(process.env.BUSINESS_EMAIL) || "contact@qorivara.com",
   profilePdfUrl: clean(process.env.PROFILE_PDF_URL),
   formEndpoint:
     clean(process.env.FORM_DESTINATION) || clean(process.env.FORM_ENDPOINT),
@@ -27,7 +27,7 @@ export const contactConfig = {
 export const whatsappNumber = contactConfig.whatsapp.replace(/\D/g, "");
 
 export const whatsappMessage =
-  "Hello Saumya, I found your website and would like to discuss QA support for my company.";
+  "Hello Qorivara, I found your website and would like to discuss QA support for my company.";
 
 /**
  * Builds a WhatsApp click-to-chat link that opens a chat with Saumya with the

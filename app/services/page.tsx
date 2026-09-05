@@ -79,7 +79,7 @@ const serviceItems = [
 export const metadata = createMetadata({
   title: "Services",
   description:
-    "Explore the business-focused QA, documentation, audit-readiness and backlog support services Saumya Dubey offers manufacturers.",
+    "Explore Qorivara Life Sciences services for QA documentation, GMP support, audit-readiness and batch record review.",
   path: "/services",
 });
 

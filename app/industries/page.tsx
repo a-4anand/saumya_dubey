@@ -6,7 +6,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "Industries",
   description:
-    "See which regulated manufacturing businesses are the best fit for Saumya Dubey's QA, documentation and backlog-reduction support.",
+    "See which regulated manufacturing businesses are the best fit for Qorivara Life Sciences QA and documentation support.",
   path: "/industries",
 });
 

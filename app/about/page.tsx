@@ -16,7 +16,7 @@ const fitPoints = [
 export const metadata = createMetadata({
   title: "About",
   description:
-    "Learn why Saumya Dubey is a strong fit for documentation-heavy QA support in pharmaceutical, Ayurvedic and related manufacturing businesses.",
+    "Meet Saumya Dubey, Founder and Lead QA Consultant behind Qorivara Life Sciences.",
   path: "/about",
 });
 
@@ -32,9 +32,9 @@ export default function AboutPage() {
           <div className="editorial-copy">
             <p className="eyebrow">About</p>
             <p className="hero-descriptor">{siteConfig.headerDescriptor}</p>
-            <h1>Why businesses work directly with Saumya.</h1>
+            <h1>Meet Saumya, the QA professional behind Qorivara.</h1>
             <p className="body-large">
-              Founder-led QA and documentation support for businesses that need practical help
+              Qorivara Life Sciences gives businesses practical QA and documentation support
               instead of a large consulting layer.
             </p>
             <p className="section-description">

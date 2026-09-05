@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { siteConfig } from "@/data/site-config";
 import { TrackableLink } from "./trackable-link";
 
@@ -5,11 +7,15 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <TrackableLink ariaLabel="Saumya Dubey home" className="brand" href="/">
-          <span className="brand-lockup">
-            <strong>{siteConfig.name.toUpperCase()}</strong>
-            <small>{siteConfig.headerDescriptor}</small>
-          </span>
+        <TrackableLink ariaLabel="Qorivara Life Sciences home" className="brand" href="/">
+          <Image
+            alt="Qorivara Life Sciences"
+            className="brand-logo"
+            height={1065}
+            priority
+            src="/brand/qorivara/03-platform-exports/svg/24-website-header-light.svg"
+            width={4096}
+          />
         </TrackableLink>
 
         <nav aria-label="Primary" className="desktop-nav">
@@ -26,11 +32,15 @@ export function SiteHeader() {
           eventName="consultation_click"
           href="/contact"
         >
-          Book a consultation
+          Discuss a Requirement
         </TrackableLink>
 
         <details className="mobile-nav">
-          <summary>Menu</summary>
+          <summary aria-label="Open navigation">
+            <span />
+            <span />
+            <span />
+          </summary>
           <div className="mobile-nav-panel">
             {siteConfig.navItems.map((item) => (
               <TrackableLink className="mobile-nav-link" href={item.href} key={item.href}>
@@ -43,7 +53,7 @@ export function SiteHeader() {
               eventName="consultation_click"
               href="/contact"
             >
-              Book a consultation
+              Discuss a Requirement
             </TrackableLink>
           </div>
         </details>

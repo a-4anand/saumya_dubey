@@ -22,14 +22,14 @@ export function StructuredData() {
         url: absoluteUrl("/"),
         inLanguage: "en-IN",
         publisher: {
-          "@id": absoluteUrl("/#person"),
+          "@id": absoluteUrl("/#professional-service"),
         },
       },
       {
         "@type": "ProfessionalService",
         "@id": absoluteUrl("/#professional-service"),
         name: siteConfig.name,
-        alternateName: "Saumya Dubey QA & GMP Consulting",
+        alternateName: "Qorivara",
         description: siteConfig.description,
         areaServed: [
           {
@@ -49,8 +49,9 @@ export function StructuredData() {
         email: contactConfig.email || undefined,
         url: absoluteUrl("/"),
         image: absoluteUrl(
-          "/images/selected-gallery/codex-clipboard-e1062b0c-5ea4-47b9-a0d3-761672393265.png",
+          "/brand/qorivara/02-colorway-exports/png/qorivara-full-horizontal-forest-on-warm-cream.png",
         ),
+        logo: absoluteUrl("/brand/qorivara/03-platform-exports/svg/24-website-header-light.svg"),
         priceRange: "$$",
         address: {
           "@type": "PostalAddress",
@@ -78,8 +79,8 @@ export function StructuredData() {
       {
         "@type": "Person",
         "@id": absoluteUrl("/#person"),
-        name: siteConfig.name,
-        jobTitle: siteConfig.title,
+        name: siteConfig.founderName,
+        jobTitle: siteConfig.founderTitle,
         image: absoluteUrl(
           "/images/selected-gallery/codex-clipboard-2ee06e77-2ba9-4652-911f-95719619aa2f.png",
         ),

@@ -111,7 +111,7 @@ export function ContactForm({ whatsappHref }: ContactFormProps) {
         <h3>WhatsApp is opening with your enquiry ready to send.</h3>
         <p>
           Just tap <strong>send</strong> in WhatsApp and it lands directly with
-          Saumya. She typically replies the same day.
+          Qorivara. Saumya typically replies the same day.
         </p>
         <div className="contact-success-actions">
           <TrackableLink
@@ -220,10 +220,10 @@ export function ContactForm({ whatsappHref }: ContactFormProps) {
         type="submit"
       >
         <WhatsAppIcon />
-        {state.pending ? "Opening WhatsApp..." : "Send to Saumya on WhatsApp"}
+        {state.pending ? "Opening WhatsApp..." : "Send to Qorivara on WhatsApp"}
       </button>
       <p className="contact-form-note">
-        Your details open in WhatsApp, neatly formatted. Tap send and Saumya
+        Your details open in WhatsApp, neatly formatted. Tap send and Qorivara
         gets it directly. No account signup, no waiting.
       </p>
     </form>

@@ -8,13 +8,16 @@ import type {
 } from "@/types/content";
 
 export const siteConfig = {
-  name: "Saumya Dubey",
-  shortName: "Saumya",
-  headerDescriptor: "Independent QA & GMP Consulting",
-  serviceDescriptor: "QA · Documentation · Quality Systems · Compliance Support",
-  title: "Independent QA & GMP Consulting",
+  name: "Qorivara Life Sciences",
+  shortName: "Qorivara",
+  founderName: "Saumya Dubey",
+  founderTitle: "Founder & Lead QA Consultant",
+  descriptor: "Quality · Compliance · Documentation",
+  headerDescriptor: "Quality · Compliance · Documentation",
+  serviceDescriptor: "QA · GMP · Documentation · Quality Systems",
+  title: "QA, GMP & Documentation Consulting",
   description:
-    "Independent QA, documentation and quality-system support for pharmaceutical, Ayurvedic, nutraceutical and related manufacturing businesses.",
+    "Practical QA, GMP, documentation and quality-system support for pharmaceutical, Ayurvedic, nutraceutical and related manufacturers.",
   location: "Surat, Gujarat, India",
   serviceAreas: [
     "Surat",
@@ -22,11 +25,11 @@ export const siteConfig = {
     "Gujarat",
     "Remote engagements across India",
   ],
-  heroEyebrow: "SAUMYA DUBEY",
+  heroEyebrow: "QORIVARA LIFE SCIENCES",
   heroHeadline: "Quality assurance, without the complexity.",
   heroAltHeadline: "Founder-led QA support for documentation-heavy manufacturing teams",
   heroDescription:
-    "Independent QA, documentation and quality-system support for pharmaceutical, Ayurvedic, nutraceutical and related manufacturing businesses.",
+    "Practical QA, documentation and quality-system support for pharmaceutical, Ayurvedic, nutraceutical and related manufacturing businesses.",
   credibilityStrip: [
     "B.Sc. Pharmaceutical Chemistry",
     "D.Pharm — Ayurveda",
@@ -216,22 +219,22 @@ export const differentiators = [
 export const processSteps: ProcessStep[] = [
   {
     step: "01",
-    title: "Scope the pressure point",
-    description: "Start with the bottleneck, the document type and the business context.",
+    title: "Discuss",
+    description: "Start with the bottleneck, document type and business context.",
   },
   {
     step: "02",
-    title: "Review the current state",
-    description: "Review documents, records or quality-system areas that are creating friction.",
+    title: "Review",
+    description: "Review documents, records or quality-system areas creating friction.",
   },
   {
     step: "03",
-    title: "Complete the agreed support",
-    description: "Revise, review or structure the work that was scoped at the start.",
+    title: "Support",
+    description: "Revise, review or structure the work agreed at the start.",
   },
   {
     step: "04",
-    title: "Hand over clearly",
+    title: "Deliver",
     description: "Close with cleaned outputs, open issues and sensible next actions.",
   },
 ];
@@ -244,8 +247,9 @@ export const experienceTimeline: ExperienceEntry[] = [
   },
   {
     yearLabel: "Next",
-    company: "Ronald Pharmaceutical Pvt. Ltd., Vadodara, Gujarat",
-    role: "Quality Assurance Professional",
+    company: "Unilever",
+    role: "Quality Assurance Officer",
+    note: "~6 months",
   },
   {
     yearLabel: "Next",
@@ -254,8 +258,9 @@ export const experienceTimeline: ExperienceEntry[] = [
   },
   {
     yearLabel: "Today",
-    company: "Independent Consulting Practice",
-    role: "Independent QA Consultant, Surat, Gujarat",
+    company: "Qorivara Life Sciences",
+    role: "Founder & Lead QA Consultant",
+    note: "Surat, Gujarat",
   },
 ];
 
@@ -330,7 +335,7 @@ export const trustHighlights = [
   "D.Pharm — Ayurveda",
   "~3 years QA experience",
   "Founder-led support with direct communication",
-  "Previous QA roles at Mepromax Lifesciences, Ronald Pharmaceutical and DAC55 Laboratory",
+  "Previous QA roles at Mepromax Lifescience, Unilever and DAC55",
   "Focused on backlog reduction, documentation quality and audit readiness",
 ];
 

@@ -4,7 +4,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "How It Works",
   description:
-    "Understand how Saumya Dubey scopes, reviews and delivers business-focused QA and documentation support.",
+    "Understand how Qorivara Life Sciences discusses, reviews, supports and delivers QA documentation work.",
   path: "/how-it-works",
 });
 

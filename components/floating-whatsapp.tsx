@@ -10,7 +10,7 @@ export function FloatingWhatsApp() {
 
   return (
     <TrackableLink
-      ariaLabel="Chat with Saumya on WhatsApp"
+      ariaLabel="Chat with Qorivara on WhatsApp"
       className="floating-whatsapp"
       eventLabel="floating whatsapp"
       eventName="whatsapp_click"
@@ -20,7 +20,7 @@ export function FloatingWhatsApp() {
         <WhatsAppIcon size={26} />
       </span>
       <span className="floating-whatsapp-label">
-        <strong>Chat with Saumya</strong>
+        <strong>Chat with Qorivara</strong>
         <small>Usually replies same day</small>
       </span>
     </TrackableLink>
