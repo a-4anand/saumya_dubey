@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import { ContactForm } from "@/components/contact-form";
 import { WhatsAppIcon } from "@/components/icons";
 import { TrackableLink } from "@/components/trackable-link";
@@ -88,7 +90,9 @@ export default function ContactPage() {
               You do not need a perfectly written brief. A short description of the backlog,
               document type, review pressure or business context is enough to begin.
             </p>
-            <ContactForm whatsappHref={whatsappHref} />
+            <Suspense fallback={<p className="contact-form-note">Loading guided intake...</p>}>
+              <ContactForm whatsappHref={whatsappHref} />
+            </Suspense>
           </div>
         </div>
       </section>

@@ -6,7 +6,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "Insights",
   description:
-    "Read practical articles from Saumya Dubey on QA backlog, documentation discipline, batch review and audit-readiness support.",
+    "Read QORIVARA field guides on QA documentation, quality systems, audit readiness, sector context and QA capacity.",
   path: "/insights",
 });
 
@@ -21,15 +21,15 @@ export default async function InsightsPage() {
             <p className="eyebrow">Insights</p>
             <h1>Practical writing for businesses dealing with documentation and QA pressure.</h1>
             <p className="body-large">
-              These articles help clarify common bottlenecks, demonstrate how Saumya thinks about
-              review work and make it easier to judge whether your requirement is a good fit.
+              These field guides clarify common bottlenecks, define practical review questions and
+              route readers toward the relevant QORIVARA service scope.
             </p>
           </div>
           <aside className="card page-hero-note">
             <p className="eyebrow">Why read this</p>
             <p>
-              Use the insights section to understand the kind of documentation, review and
-              audit-readiness issues Saumya is best suited to support.
+              Editorial pillars: QA Documentation, Quality Systems, Audit Readiness, Sector
+              Context and QA Capacity.
             </p>
           </aside>
         </div>

@@ -38,16 +38,18 @@ export const siteConfig = {
   navItems: [
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },
-    { label: "About", href: "/about" },
     { label: "How It Works", href: "/how-it-works" },
     { label: "Insights", href: "/insights" },
+    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ] satisfies NavItem[],
   footerItems: [
     { label: "Services", href: "/services" },
     { label: "Industries", href: "/industries" },
+    { label: "How It Works", href: "/how-it-works" },
     { label: "About", href: "/about" },
     { label: "Insights", href: "/insights" },
+    { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
     { label: "Privacy", href: "/privacy" },
     { label: "Professional Scope", href: "/professional-scope" },
@@ -219,23 +221,38 @@ export const differentiators = [
 export const processSteps: ProcessStep[] = [
   {
     step: "01",
-    title: "Discuss",
-    description: "Start with the bottleneck, document type and business context.",
+    title: "Requirement and fit check",
+    description: "Capture the problem, sector, timing, mode and non-confidential context.",
   },
   {
     step: "02",
-    title: "Review",
-    description: "Review documents, records or quality-system areas creating friction.",
+    title: "Competence and conflict review",
+    description: "Confirm the work fits available expertise and identify specialist needs.",
   },
   {
     step: "03",
-    title: "Support",
-    description: "Revise, review or structure the work agreed at the start.",
+    title: "Scope, proposal and NDA",
+    description: "Define deliverables, exclusions, responsibilities, assumptions and confidentiality.",
   },
   {
     step: "04",
-    title: "Deliver",
-    description: "Close with cleaned outputs, open issues and sensible next actions.",
+    title: "Approved information exchange",
+    description: "Use the agreed secure method; public forms are not document-upload channels.",
+  },
+  {
+    step: "05",
+    title: "Controlled delivery",
+    description: "Work through assigned tasks, status cadence, issues and escalation.",
+  },
+  {
+    step: "06",
+    title: "Technical / quality review",
+    description: "Apply qualified review where the scope or risk requires it and capacity exists.",
+  },
+  {
+    step: "07",
+    title: "Client review and closeout",
+    description: "Deliver final work, record open items and agree any next scope.",
   },
 ];
 

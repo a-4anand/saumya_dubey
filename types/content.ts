@@ -41,4 +41,13 @@ export interface InsightFrontmatter {
   title: string;
   excerpt: string;
   category: string;
+  pillar?: string;
+  author?: string;
+  publishedAt?: string;
+  reviewedAt?: string;
+  relatedService?: string;
+  sources?: Array<{
+    label: string;
+    url: string;
+  }>;
 }

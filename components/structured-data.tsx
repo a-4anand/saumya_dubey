@@ -1,17 +1,8 @@
 import { siteConfig } from "@/data/site-config";
-import { absoluteUrl, contactConfig, whatsappNumber } from "@/lib/site";
+import { serviceDefinitions } from "@/data/services";
+import { absoluteUrl, contactConfig } from "@/lib/site";
 
 export function StructuredData() {
-  const serviceNames = [
-    "QA documentation cleanup",
-    "Batch record review support",
-    "SOP revision support",
-    "Internal audit readiness support",
-    "GMP documentation support",
-    "COA, specification, STP and TDS review",
-    "Ayurvedic and herbal documentation support",
-  ];
-
   const payload = {
     "@context": "https://schema.org",
     "@graph": [
@@ -52,7 +43,6 @@ export function StructuredData() {
           "/brand/qorivara/02-colorway-exports/png/qorivara-full-horizontal-forest-on-warm-cream.png",
         ),
         logo: absoluteUrl("/brand/qorivara/03-platform-exports/svg/24-website-header-light.svg"),
-        priceRange: "$$",
         address: {
           "@type": "PostalAddress",
           addressLocality: "Surat",
@@ -62,11 +52,12 @@ export function StructuredData() {
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "QA, GMP and documentation consulting services",
-          itemListElement: serviceNames.map((serviceName) => ({
+          itemListElement: serviceDefinitions.map((service) => ({
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: serviceName,
+              name: service.title,
+              description: service.description,
               provider: {
                 "@id": absoluteUrl("/#professional-service"),
               },
@@ -74,7 +65,9 @@ export function StructuredData() {
             },
           })),
         },
-        sameAs: whatsappNumber ? [`https://wa.me/${whatsappNumber}`] : undefined,
+        founder: {
+          "@id": absoluteUrl("/#person"),
+        },
       },
       {
         "@type": "Person",

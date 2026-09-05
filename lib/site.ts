@@ -3,7 +3,8 @@ import { siteConfig } from "@/data/site-config";
 const clean = (value?: string | null) => value?.trim() ?? "";
 
 const DEFAULT_SITE_URL = "https://www.qorivara.com";
-const configuredSiteUrl = clean(process.env.SITE_URL);
+const configuredSiteUrl =
+  clean(process.env.NEXT_PUBLIC_SITE_URL) || clean(process.env.SITE_URL);
 
 // Direct-contact defaults so every WhatsApp / call link works out of the box.
 // Override in production via environment variables if the number ever changes.
@@ -17,6 +18,14 @@ export const contactConfig = {
   phone: clean(process.env.PHONE_NUMBER) || DEFAULT_PHONE,
   whatsapp: clean(process.env.WHATSAPP_NUMBER) || DEFAULT_WHATSAPP,
   email: clean(process.env.BUSINESS_EMAIL) || "contact@qorivara.com",
+  contactToEmail:
+    clean(process.env.CONTACT_TO_EMAIL) ||
+    clean(process.env.BUSINESS_EMAIL) ||
+    "contact@qorivara.com",
+  contactFromEmail: clean(process.env.CONTACT_FROM_EMAIL),
+  leadWebhookUrl: clean(process.env.LEAD_WEBHOOK_URL),
+  leadWebhookSecret: clean(process.env.LEAD_WEBHOOK_SECRET),
+  bookingUrl: clean(process.env.NEXT_PUBLIC_BOOKING_URL),
   profilePdfUrl: clean(process.env.PROFILE_PDF_URL),
   formEndpoint:
     clean(process.env.FORM_DESTINATION) || clean(process.env.FORM_ENDPOINT),
@@ -41,6 +50,15 @@ export function buildWhatsappHref(message: string = whatsappMessage) {
   }
 
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+export function buildMinimalWhatsappHref(serviceNeed = "QA support", company = "") {
+  const cleanService = clean(serviceNeed) || "QA support";
+  const cleanCompany = clean(company);
+  const companyText = cleanCompany ? ` My company is ${cleanCompany}.` : "";
+  return buildWhatsappHref(
+    `Hello QORIVARA. I would like to discuss ${cleanService}.${companyText} Please let me know the next step.`,
+  );
 }
 
 export const phoneHref = contactConfig.phone

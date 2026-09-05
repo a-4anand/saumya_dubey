@@ -3,6 +3,14 @@ slug: common-problems-in-batch-record-review
 title: Common Problems in Batch Record Review
 excerpt: Batch record review usually slows down for a few repeat reasons. Recognizing them early makes the process more efficient.
 category: Batch review
+pillar: QA Documentation
+author: Saumya Dubey
+publishedAt: "2026-09-05"
+reviewedAt: "2026-09-05"
+relatedService: batch-record-review
+sources:
+  - label: WHO good manufacturing practices overview
+    url: https://www.who.int/teams/health-product-policy-and-standards/standards-and-specifications/norms-and-standards/gmp
 ---
 
 Batch record review often becomes stressful when the same document quality issues keep returning. The review stage then absorbs time that should have been saved earlier in the process.
@@ -28,3 +36,7 @@ If all review pressure is pushed to the final stage, recurring issues keep accum
 Review is more efficient when teams know which issues can be corrected routinely and which require formal clarification or escalation.
 
 A disciplined review approach improves not only the final check, but also the document quality habits that feed into it.
+
+## Practical note
+
+Recurring observations are useful only when they are logged, prioritized and closed through the client's authorized quality system.

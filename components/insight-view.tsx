@@ -6,16 +6,14 @@ import { trackEvent } from "./page-view-tracker";
 
 interface InsightViewProps {
   slug: string;
-  title: string;
 }
 
-export function InsightView({ slug, title }: InsightViewProps) {
+export function InsightView({ slug }: InsightViewProps) {
   useEffect(() => {
     trackEvent("insight_view", {
       slug,
-      title,
     });
-  }, [slug, title]);
+  }, [slug]);
 
   return null;
 }

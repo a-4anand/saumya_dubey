@@ -4,6 +4,7 @@ import { StructuredData } from "@/components/structured-data";
 import { TrackableLink } from "@/components/trackable-link";
 import { WhatsAppIcon } from "@/components/icons";
 import { experienceTimeline, processSteps, siteConfig } from "@/data/site-config";
+import { productizedOffers, serviceDefinitions, serviceFamilies } from "@/data/services";
 import { createMetadata } from "@/lib/metadata";
 import { emailHref, whatsappHref } from "@/lib/site";
 
@@ -20,65 +21,6 @@ const pharmaImage = "/images/pharma-manufacturing.png";
 const ayurvedicImage = "/images/ayurvedic-quality.png";
 const technicalImage = "/images/coa-specification.png";
 
-const services = [
-  {
-    number: "01",
-    title: "BMR / BPR",
-    meta: "Preparation · Review · Revision",
-    detail:
-      "Support for batch manufacturing and packing records where accuracy, traceability and final-review confidence matter.",
-  },
-  {
-    number: "02",
-    title: "SOP",
-    meta: "Preparation · Review · Revision",
-    detail:
-      "Practical cleanup and revision support so procedures stay current, readable and easier for teams to follow.",
-  },
-  {
-    number: "03",
-    title: "Change Control",
-    meta: "Documentation · Structure · Follow-through",
-    detail:
-      "Help with change-control records and supporting documentation where scattered details need a clearer controlled path.",
-  },
-  {
-    number: "04",
-    title: "Internal Audit & Self-Inspection",
-    meta: "Gap review · Preparation · Action points",
-    detail:
-      "Focused review before pressure builds, turning visible gaps into practical follow-through actions.",
-  },
-  {
-    number: "05",
-    title: "Specifications / STP / TDS",
-    meta: "Technical consistency · Review · Cleanup",
-    detail:
-      "Review support for technical documents that need clearer wording, stronger consistency and fewer avoidable corrections.",
-  },
-  {
-    number: "06",
-    title: "COA Preparation & Review",
-    meta: "Certificate review · Detail checks · QA handover",
-    detail:
-      "Preparation and review support for COAs where data presentation and quality review discipline need attention.",
-  },
-  {
-    number: "07",
-    title: "Batch Record Final Review",
-    meta: "Backlog · Missing-entry checks · Release confidence",
-    detail:
-      "A disciplined second pass for teams that need batch records checked carefully without stretching internal QA further.",
-  },
-  {
-    number: "08",
-    title: "Area Monitoring & QA Documentation",
-    meta: "Records · Logs · Quality-system support",
-    detail:
-      "Scoped support for area monitoring records and the supporting QA documentation that keeps quality systems traceable.",
-  },
-];
-
 const industries = [
   "Pharmaceutical",
   "Ayurvedic / Herbal",
@@ -89,8 +31,8 @@ const industries = [
 
 const whyQorivara = [
   {
-    title: "Direct Access",
-    text: "Clients work directly with Saumya Dubey, the founder and QA professional behind the work.",
+    title: "Responsible Access",
+    text: "Clients work directly with the responsible QORIVARA professional, with founder-led delivery or oversight where applicable today.",
   },
   {
     title: "Focused Scope",
@@ -103,7 +45,7 @@ const whyQorivara = [
 ];
 
 export const metadata = createMetadata({
-  title: "Qorivara Life Sciences | QA, GMP & Documentation Consulting",
+  title: "Structured QA Support for Documentation-Heavy Manufacturing Teams",
   description:
     "Practical QA, GMP, documentation and quality-system support for pharmaceutical, Ayurvedic, nutraceutical and related manufacturers.",
   path: "/",
@@ -126,33 +68,36 @@ export default function HomePage() {
               width={4096}
             />
             <p className="hero-descriptor">{siteConfig.descriptor}</p>
-            <h1>{siteConfig.heroHeadline}</h1>
-            <p className="body-large">{siteConfig.heroDescription}</p>
+            <h1>Structured QA support for documentation-heavy manufacturing teams.</h1>
+            <p className="body-large">
+              QORIVARA helps pharmaceutical, Ayurvedic and selected regulated manufacturers reduce
+              documentation backlog, strengthen review discipline and prepare for audits through
+              scoped remote, hybrid and on-site support.
+            </p>
             <div className="hero-credential-row" aria-label="Saumya Dubey credentials">
               {siteConfig.credibilityStrip.map((item) => (
                 <span key={item}>{item}</span>
               ))}
             </div>
             <p className="founder-line">
-              Founded by <strong>Saumya Dubey</strong>, Founder & Lead QA Consultant.
+              Based in Surat · Remote support across India · NDA before confidential document exchange.
             </p>
             <div className="hero-actions">
               <TrackableLink
                 className="button button-primary"
                 eventLabel="hero qa requirement"
-                eventName="consultation_click"
-                href="/contact"
+                eventName="hero_cta_click"
+                href="/services"
               >
-                Discuss a QA Requirement
+                Explore services
               </TrackableLink>
               <TrackableLink
-                className="button button-whatsapp"
-                eventLabel="hero whatsapp"
-                eventName="whatsapp_click"
-                href={whatsappHref}
+                className="button button-secondary"
+                eventLabel="hero discuss requirement"
+                eventName="hero_cta_click"
+                href="/contact"
               >
-                <WhatsAppIcon />
-                WhatsApp Qorivara
+                Discuss a requirement
               </TrackableLink>
             </div>
           </div>
@@ -167,115 +112,72 @@ export default function HomePage() {
               src={heroPortraitImage}
               width={1536}
             />
-            <figcaption>Qorivara is the company. Saumya is the person behind the QA work.</figcaption>
+            <figcaption>Founder-led credibility inside a company-led QA service system.</figcaption>
           </figure>
-        </div>
-      </section>
-
-      <section className="trust-type-strip">
-        <div className="container trust-type-row">
-          <span>B.Sc. Pharmaceutical Chemistry</span>
-          <span>D.Pharm — Ayurveda</span>
-          <span>3+ Years QA Experience</span>
-          <span>Surat · Gujarat · India</span>
         </div>
       </section>
 
       <section className="section section-cream">
-        <div className="container real-work-feature">
-          <figure className="real-work-image">
-            <Image
-              alt="Saumya Dubey in a historical QA cleanroom work setting."
-              className="experience-image"
-              height={1824}
-              loading="eager"
-              sizes="(max-width: 980px) 100vw, 36vw"
-              src={cleanroomImage}
-              width={862}
-            />
-            <figcaption>Historical professional QA experience, not a Qorivara facility.</figcaption>
-          </figure>
+        <div className="container problem-layout">
           <div>
-            <p className="eyebrow">Real QA Experience</p>
-            <h2>Built from real QA work.</h2>
+            <p className="eyebrow">Buyer Problems</p>
+            <h2>Start with the pressure point.</h2>
             <p className="section-description">
-              Qorivara is built on practical Quality Assurance experience across pharmaceutical
-              environments. The work is grounded in records, review discipline, SOP control and the
-              follow-through that manufacturing quality systems actually need.
+              QORIVARA routes enquiries by the work product and responsibility boundary, not by a
+              generic consulting catalogue.
             </p>
-            <div className="career-timeline">
-              {experienceTimeline.map((entry, index) => (
-                <article className="career-timeline-row" key={`${entry.yearLabel}-${entry.company}`}>
-                  <div className="career-timeline-year">{entry.yearLabel}</div>
-                  <div className="career-timeline-line" aria-hidden="true">
-                    {index < experienceTimeline.length - 1 ? <span /> : null}
-                  </div>
-                  <div className="career-timeline-copy">
-                    <h3>{entry.company}</h3>
-                    <p>{entry.role}</p>
-                    {entry.note ? <p className="timeline-note">{entry.note}</p> : null}
-                  </div>
-                </article>
-              ))}
-            </div>
+          </div>
+          <div className="problem-card-grid">
+            {[
+              ["Batch records are waiting for review.", "batch-record-review"],
+              ["SOPs need structured revision.", "sop-documentation"],
+              ["An audit or self-inspection is approaching.", "audit-readiness-self-inspection"],
+              ["The QA team needs temporary documentation capacity.", "overflow-qa-support"],
+            ].map(([title, slug], index) => (
+              <article className="problem-card-item" key={slug}>
+                <span className="problem-card-index">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{title}</h3>
+                  <TrackableLink
+                    className="service-link"
+                    eventLabel={slug}
+                    eventName="service_cta_click"
+                    href={`/services/${slug}`}
+                  >
+                    View the relevant service
+                  </TrackableLink>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section qori-detail-section">
-        <div className="container detail-image-grid">
-          <div>
-            <p className="eyebrow">Documentation</p>
-            <h2>The work is often in the details.</h2>
-            <p className="section-description">
-              Qorivara supports the documents that slow teams down when they are outdated,
-              incomplete or difficult to defend during review.
-            </p>
-            <div className="label-cloud">
-              {["BMR / BPR", "SOP", "COA", "Specifications", "STP / TDS", "Batch Record Review"].map(
-                (item) => (
-                  <span key={item}>{item}</span>
-                ),
-              )}
-            </div>
+      <section className="section section-cream">
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">Service Families</p>
+            <h2>One taxonomy for the work QORIVARA can support now.</h2>
           </div>
-          <Image
-            alt="Saumya Dubey working at a QA desk with files and documentation."
-            className="editorial-image detail-feature-image"
-            height={1086}
-            loading="eager"
-            sizes="(max-width: 980px) 100vw, 44vw"
-            src={qaDeskImage}
-            width={1448}
-          />
-        </div>
-      </section>
-
-      <section className="section section-editorial">
-        <div className="container detail-image-grid detail-image-grid-reverse">
-          <Image
-            alt="Saumya Dubey reviewing QA documentation in a white coat."
-            className="editorial-image detail-feature-image"
-            height={1024}
-            loading="eager"
-            sizes="(max-width: 980px) 100vw, 44vw"
-            src={whiteCoatImage}
-            width={1536}
-          />
-          <div>
-            <p className="eyebrow">Quality Systems</p>
-            <h2>Quality systems need follow-through.</h2>
-            <p className="section-description">
-              Internal audits, self-inspections, change-control records and monitoring documents
-              all need disciplined closure, not just good intentions.
-            </p>
-            <div className="label-cloud">
-              {["Internal Audit", "Self Inspection", "Change Control", "Area Monitoring"].map(
-                (item) => (
-                  <span key={item}>{item}</span>
-                ),
-              )}
-            </div>
+          <div className="service-family-grid">
+            {serviceFamilies.map((family) => (
+              <article className="card" key={family}>
+                <p className="eyebrow">{family}</p>
+                {serviceDefinitions
+                  .filter((service) => service.family === family)
+                  .map((service) => (
+                    <TrackableLink
+                      className="family-service-link"
+                      eventLabel={service.slug}
+                      eventName="service_cta_click"
+                      href={`/services/${service.slug}`}
+                      key={service.slug}
+                    >
+                      {service.title}
+                    </TrackableLink>
+                  ))}
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -286,19 +188,27 @@ export default function HomePage() {
             <p className="eyebrow">Services</p>
             <h2>Precise support for documentation-heavy QA work.</h2>
             <p className="section-description">
-              An editorial service list keeps the work scannable: numbers, thin dividers and
-              expandable detail for the support a manufacturing team may actually need.
+              Each service page explains outputs, inputs, exclusions, delivery modes and the
+              responsibility split before a buyer reaches the intake form.
             </p>
           </div>
           <div className="qori-service-list">
-            {services.map((service, index) => (
-              <details className="qori-service-item" key={service.number} open={index === 0}>
+            {serviceDefinitions.map((service, index) => (
+              <details className="qori-service-item" key={service.slug} open={index === 0}>
                 <summary>
-                  <span>{service.number}</span>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
                   <strong>{service.title}</strong>
-                  <small>{service.meta}</small>
+                  <small>{service.family}</small>
                 </summary>
-                <p>{service.detail}</p>
+                <p>{service.outcome}</p>
+                <TrackableLink
+                  className="service-link service-link-light"
+                  eventLabel={service.slug}
+                  eventName="service_cta_click"
+                  href={`/services/${service.slug}`}
+                >
+                  Review scope and deliverables
+                </TrackableLink>
               </details>
             ))}
           </div>
@@ -306,69 +216,59 @@ export default function HomePage() {
       </section>
 
       <section className="section section-cream">
-        <div className="container industries-editorial">
-          <div>
-            <p className="eyebrow">Industries</p>
-            <h2>For regulated manufacturing businesses where quality records matter.</h2>
-            <p className="section-description">
-              The strongest fit is a team that needs practical QA documentation support, sharper
-              review discipline or temporary bandwidth around a clear requirement.
-            </p>
-            <div className="industry-text-list">
-              {industries.map((industry) => (
-                <span key={industry}>{industry}</span>
-              ))}
-            </div>
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">Starting Points</p>
+            <h2>Productized enough to quote. Scoped enough to stay truthful.</h2>
           </div>
-          <div className="industry-photo-pair">
-            <Image
-              alt="Pharmaceutical manufacturing environment."
-              className="editorial-image"
-              height={941}
-              loading="eager"
-              sizes="(max-width: 980px) 100vw, 28vw"
-              src={pharmaImage}
-              width={1672}
-            />
-            <Image
-              alt="Ayurvedic and herbal quality documentation workplace."
-              className="editorial-image"
-              height={1024}
-              loading="eager"
-              sizes="(max-width: 980px) 100vw, 28vw"
-              src={ayurvedicImage}
-              width={1536}
-            />
+          <div className="offer-grid">
+            {productizedOffers.map((offer) => (
+              <article className="card" key={offer.title}>
+                <h3>{offer.title}</h3>
+                <p><strong>Scope:</strong> {offer.scope}</p>
+                <p><strong>Outputs:</strong> {offer.outputs}</p>
+                <p><strong>Boundary:</strong> {offer.boundary}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section founder-section">
-        <div className="container founder-grid">
-          <Image
-            alt="Saumya Dubey, Founder and Lead QA Consultant at Qorivara Life Sciences."
-            className="editorial-image founder-image"
-            height={1024}
-            loading="eager"
-            sizes="(max-width: 980px) 100vw, 38vw"
-            src={founderPortraitImage}
-            width={1536}
-          />
+      <section className="section section-cream">
+        <div className="container engagement-grid">
           <div>
-            <p className="eyebrow">Founder</p>
-            <h2>Meet Saumya.</h2>
-            <p className="founder-title">Founder & Lead QA Consultant</p>
-            <div className="founder-credentials">
-              {siteConfig.credibilityStrip.map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
-            <p className="section-description">
-              Saumya&apos;s career began in hands-on QA roles and now continues through Qorivara
-              Life Sciences in Surat. Her work is practical, document-aware and strongest where a
-              business needs clear support without adding a large consulting layer.
-            </p>
+            <p className="eyebrow">Controlled Method</p>
+            <h2>Simple to start, controlled before confidential work begins.</h2>
           </div>
+          <div className="process-line-layout process-line-layout-large process-line-layout-seven">
+            {processSteps.map((step) => (
+              <article className="process-line-item" key={step.step}>
+                <span className="process-line-number">{step.step}</span>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-editorial">
+        <div className="container support-mode-grid">
+          <article>
+            <p className="eyebrow">Remote</p>
+            <h3>Documentation review, drafting support and status discussions.</h3>
+            <p>Suitable after an NDA and approved secure exchange method.</p>
+          </article>
+          <article>
+            <p className="eyebrow">Hybrid</p>
+            <h3>Audit readiness, self-inspection and context-heavy QMS work.</h3>
+            <p>Useful when site context helps but follow-through can continue remotely.</p>
+          </article>
+          <article>
+            <p className="eyebrow">On-site</p>
+            <h3>Physical walkthroughs and observation-based reviews.</h3>
+            <p>Used only where the scope requires seeing the area, process or evidence.</p>
+          </article>
         </div>
       </section>
 
@@ -388,50 +288,72 @@ export default function HomePage() {
       </section>
 
       <section className="section section-editorial">
-        <div className="container engagement-grid">
+        <div className="container founder-grid">
+          <Image
+            alt="Saumya Dubey, Founder and Lead QA Consultant at Qorivara Life Sciences."
+            className="editorial-image founder-image"
+            height={1024}
+            sizes="(max-width: 980px) 100vw, 38vw"
+            src={founderPortraitImage}
+            width={1536}
+          />
           <div>
-            <p className="eyebrow">How It Works</p>
-            <h2>Simple enough to start quickly. Structured enough to be useful.</h2>
-          </div>
-          <div className="process-line-layout">
-            {processSteps.map((step) => (
-              <article className="process-line-item" key={step.step}>
-                <span className="process-line-number">{step.step}</span>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </article>
-            ))}
+            <p className="eyebrow">Founder Credibility</p>
+            <h2>Saumya leads the current practice inside QORIVARA.</h2>
+            <p className="founder-title">Founder & Lead QA Consultant</p>
+            <div className="founder-credentials">
+              {siteConfig.credibilityStrip.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+            <p className="section-description">
+              Her previous QA roles are presented as professional experience, not as QORIVARA
+              clients, partners or endorsements. The full timeline sits on the About page.
+            </p>
+            <TrackableLink className="button button-secondary" href="/about">
+              Read about QORIVARA
+            </TrackableLink>
           </div>
         </div>
       </section>
 
       <section className="section section-cream">
-        <div className="container support-mode-grid">
-          <article>
-            <p className="eyebrow">Remote Support</p>
-            <h3>Documentation and review work that can often be handled digitally.</h3>
-            <p>
-              Useful for scoped SOP, BMR/BPR, COA, specification, STP/TDS and quality-system record
-              review when secure document sharing is practical.
+        <div className="container industries-editorial">
+          <div>
+            <p className="eyebrow">Sectors</p>
+            <h2>Defined scope for regulated manufacturing contexts.</h2>
+            <p className="section-description">
+              Pharmaceutical and Ayurveda/herbal documentation are current strengths. Nutraceutical,
+              cosmetic and private-label enquiries are scoped carefully so QORIVARA does not imply
+              regulatory authority it has not assigned.
             </p>
-          </article>
-          <article>
-            <p className="eyebrow">Hybrid Support</p>
-            <h3>Assignments that may benefit from periodic site visits.</h3>
-            <p>
-              Some quality-system and audit-readiness requirements are better discussed with site
-              context, depending on location, scope and confidentiality needs.
-            </p>
-          </article>
-          <Image
-            alt="Technical QA documentation and specification review."
-            className="editorial-image"
-            height={1024}
-            loading="eager"
-            sizes="(max-width: 980px) 100vw, 28vw"
-            src={technicalImage}
-            width={1536}
-          />
+            <div className="industry-text-list">
+              {industries.map((industry) => (
+                <span key={industry}>{industry}</span>
+              ))}
+            </div>
+            <TrackableLink className="button button-secondary" href="/industries">
+              Review sector boundaries
+            </TrackableLink>
+          </div>
+          <div className="industry-photo-pair">
+            <Image
+              alt="Pharmaceutical manufacturing environment."
+              className="editorial-image"
+              height={941}
+              sizes="(max-width: 980px) 100vw, 28vw"
+              src={pharmaImage}
+              width={1672}
+            />
+            <Image
+              alt="Ayurvedic and herbal quality documentation workplace."
+              className="editorial-image"
+              height={1024}
+              sizes="(max-width: 980px) 100vw, 28vw"
+              src={ayurvedicImage}
+              width={1536}
+            />
+          </div>
         </div>
       </section>
 

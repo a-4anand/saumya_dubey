@@ -3,6 +3,16 @@ slug: what-a-good-self-inspection-should-find
 title: What a Good Self-Inspection Should Find
 excerpt: Strong self-inspections are not about finding fault for its own sake. They are about surfacing what the system is quietly tolerating.
 category: Self-inspection
+pillar: Audit Readiness
+author: Saumya Dubey
+publishedAt: "2026-09-05"
+reviewedAt: "2026-09-05"
+relatedService: audit-readiness-self-inspection
+sources:
+  - label: WHO good manufacturing practices overview
+    url: https://www.who.int/teams/health-product-policy-and-standards/standards-and-specifications/norms-and-standards/gmp
+  - label: Drugs Rules, 1945
+    url: https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2022/drug_rules/Drugs%20Rules,%201945.pdf
 ---
 
 A self-inspection is most valuable when it identifies weak signals early. If every inspection ends with only superficial observations, the process may be too rushed or too cautious to be useful.
@@ -24,3 +34,7 @@ Pending revisions, delayed reviews, incomplete logs and late follow-up actions a
 Findings are only useful if they lead to proportionate action. The goal is not to generate a long report. The goal is to improve control, clarity and follow-through.
 
 A strong self-inspection helps management see what needs attention before those gaps grow into bigger operational or audit problems.
+
+## Practical note
+
+Self-inspection support can help prioritize observations. It is not a substitute for the client's regulated responsibilities or authorized decisions.

@@ -1,10 +1,20 @@
-import { SectionHeading } from "@/components/section-heading";
-import { professionalBoundaries } from "@/data/site-config";
 import { createMetadata } from "@/lib/metadata";
+import { TrackableLink } from "@/components/trackable-link";
+
+const boundaries = [
+  "QORIVARA provides external consulting support within an agreed scope.",
+  "The client's licensed or authorized personnel retain regulated approvals, release decisions and statutory responsibilities.",
+  "Deliverables depend on the completeness and accuracy of information provided by the client.",
+  "A gap review, audit-readiness review or self-inspection support is not certification and does not guarantee an inspection, approval or commercial result.",
+  "Work outside current competence is declined, narrowed or assigned only when an appropriately qualified professional is available.",
+  "Confidential information is requested only after scope, NDA where appropriate and an agreed protection/exchange process.",
+  "Previous-employer material is not reused.",
+];
 
 export const metadata = createMetadata({
   title: "Professional Scope",
-  description: "Clear scope and professional boundaries for Saumya Dubey's QA and documentation consulting work.",
+  description:
+    "Plain-language professional boundaries for QORIVARA's QA documentation and quality-system consulting support.",
   path: "/professional-scope",
 });
 
@@ -13,40 +23,39 @@ export default function ProfessionalScopePage() {
     <>
       <section className="page-hero">
         <div className="container narrow">
-          <p className="eyebrow">Professional scope</p>
+          <p className="eyebrow">Professional Scope</p>
           <h1>Responsible support, clearly scoped.</h1>
           <p className="body-large">
-            Clear boundaries make the work more useful. They protect trust, keep the engagement
-            realistic and avoid promising what no responsible consultant should promise.
+            These boundaries protect clients and QORIVARA by making the work, responsibility split
+            and limits clear before confidential delivery begins.
           </p>
         </div>
       </section>
 
       <section className="section">
-        <div className="container about-grid">
-          <div>
-            <SectionHeading
-              title="Boundaries that support clarity and trust."
-              description="These boundaries are not there to sound defensive. They help define where Saumya's support is useful and how the work stays credible."
-            />
-            <ul className="list-clean">
-              {professionalBoundaries.map((boundary) => (
+        <div className="container service-detail-layout">
+          <article className="card scope-boundary">
+            <p className="eyebrow">Current Policy</p>
+            <h2>What QORIVARA can and cannot promise.</h2>
+            <ul className="detail-list">
+              {boundaries.map((boundary) => (
                 <li key={boundary}>{boundary}</li>
               ))}
             </ul>
-          </div>
-          <div className="card">
-            <p className="eyebrow">Why this matters</p>
-            <h3>Clear scope makes outside QA support safer to trust.</h3>
+          </article>
+          <article className="card">
+            <p className="eyebrow">Before Documents</p>
+            <h2>No public-form document exchange.</h2>
             <p>
-              Confidential material from previous employers is not reused, and prior SOPs, systems
-              or records are not presented as reusable client assets.
+              The public intake is for non-confidential requirement summaries only. If the
+              requirement is a fit, QORIVARA will agree the scope, protection terms and approved
+              exchange method before any controlled records, formulas or regulated documents are
+              shared.
             </p>
-            <p>
-              Clear boundaries also mean the work is not overstated as a legal replacement for
-              designated personnel or a guarantee of compliance outcomes.
-            </p>
-          </div>
+            <TrackableLink className="button button-primary" href="/contact">
+              Discuss a requirement
+            </TrackableLink>
+          </article>
         </div>
       </section>
     </>

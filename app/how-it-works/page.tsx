@@ -1,10 +1,11 @@
 import { processSteps } from "@/data/site-config";
 import { createMetadata } from "@/lib/metadata";
+import { TrackableLink } from "@/components/trackable-link";
 
 export const metadata = createMetadata({
   title: "How It Works",
   description:
-    "Understand how Qorivara Life Sciences discusses, reviews, supports and delivers QA documentation work.",
+    "Understand QORIVARA's seven-stage path from requirement fit check to scope, NDA, controlled delivery, review and closeout.",
   path: "/how-it-works",
 });
 
@@ -13,38 +14,43 @@ export default function HowItWorksPage() {
     <>
       <section className="page-hero-luxury">
         <div className="container narrow">
-          <p className="eyebrow">How it works</p>
-          <h1>A simple process for messy QA requirements.</h1>
+          <p className="eyebrow">How It Works</p>
+          <h1>A controlled path for QA documentation support.</h1>
           <p className="body-large">
-            The first step is not a giant consulting discovery phase. It is a practical review of
-            where the documentation, records or QA process are already slowing the business.
+            QORIVARA starts with fit and responsibility before confidential work begins. The process
+            is deliberately structured for regulated manufacturing teams.
           </p>
         </div>
       </section>
 
       <section className="section section-cream">
-        <div className="container section-shell section-shell-cream">
-          <div className="process-line-layout process-line-layout-large">
+        <div className="container">
+          <div className="method-step-list">
             {processSteps.map((step) => (
-              <article className="process-line-item" key={step.step}>
+              <article className="method-step" key={step.step}>
                 <span className="process-line-number">{step.step}</span>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
+                <div>
+                  <h2>{step.title}</h2>
+                  <p>{step.description}</p>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="signature-process-section">
-        <div className="container editorial-list-block">
-          <p className="eyebrow">Working principles</p>
-          <ul className="detail-list">
-            <li>Start with the live bottleneck, not generic process theory.</li>
-            <li>Keep the scope clear enough to be useful and commercially realistic.</li>
-            <li>Handle confidential documentation carefully and professionally.</li>
-            <li>Focus on practical outputs, not vague consulting theatre.</li>
-          </ul>
+      <section className="section section-editorial">
+        <div className="container section-shell section-shell-sage">
+          <p className="eyebrow">Responsibility Statement</p>
+          <h2>External support does not replace client-authorized responsibility.</h2>
+          <p className="section-description">
+            QORIVARA does not replace the manufacturer&apos;s designated personnel, approvals, licences
+            or regulated decision-making. Work outside available competence is declined, narrowed
+            or assigned only when an appropriately qualified professional is available.
+          </p>
+          <TrackableLink className="button button-secondary" href="/professional-scope">
+            Read professional scope
+          </TrackableLink>
         </div>
       </section>
     </>

@@ -1,12 +1,52 @@
 import Image from "next/image";
 
 import { TrackableLink } from "@/components/trackable-link";
+import { serviceDefinitions } from "@/data/services";
 import { createMetadata } from "@/lib/metadata";
+
+const sectors = [
+  {
+    title: "Pharmaceuticals",
+    context: "Documentation, batch records, SOP control, quality-system records and audit readiness.",
+    framing:
+      "Work may reference GMP-aligned documentation and applicable Drugs Rules/Schedule M context without promising compliance, certification or inspection outcome.",
+    boundary:
+      "QORIVARA does not grant licences, certify GMP or replace the manufacturer's authorized personnel.",
+    services: ["batch-record-review", "sop-documentation", "audit-readiness-self-inspection"],
+  },
+  {
+    title: "Ayurveda / Herbal",
+    context: "Scoped documentation and QA support for Ayurveda-linked and herbal manufacturers.",
+    framing:
+      "The context is ASU/Schedule T, not pharmaceutical Schedule M. Saumya's D.Pharm Ayurveda background supports practical documentation understanding.",
+    boundary:
+      "Specialist licensing, laboratory or legal interpretations must be handled by appropriately qualified professionals.",
+    services: ["sop-documentation", "qa-documentation-review", "technical-document-review"],
+  },
+  {
+    title: "Nutraceuticals",
+    context: "Documentation-quality support where food-law and FSSAI context must stay distinct from pharmaceutical claims.",
+    framing:
+      "Current public support is limited to documentation quality, review discipline and scoped QA records.",
+    boundary:
+      "Claims, labelling, licensing and specialist FSSAI regulatory interpretation require a qualified professional.",
+    services: ["qa-documentation-review", "technical-document-review", "overflow-qa-support"],
+  },
+  {
+    title: "Cosmetics / Private Label",
+    context: "Discovery and scoping for adjacent regulated or partner-manufacturing documentation questions.",
+    framing:
+      "QORIVARA can help clarify the documentation support need and responsibility split before accepting scope.",
+    boundary:
+      "Detailed cosmetics regulatory work, licence outcomes or manufacturer responsibility are not marketed as current public services.",
+    services: ["qa-documentation-review", "overflow-qa-support"],
+  },
+];
 
 export const metadata = createMetadata({
   title: "Industries",
   description:
-    "See which regulated manufacturing businesses are the best fit for Qorivara Life Sciences QA and documentation support.",
+    "Regulated manufacturing contexts QORIVARA supports within defined QA documentation and quality-system scope.",
   path: "/industries",
 });
 
@@ -16,90 +56,62 @@ export default function IndustriesPage() {
       <section className="page-hero-luxury">
         <div className="container narrow">
           <p className="eyebrow">Industries</p>
-          <h1>Built for manufacturers where documentation quality affects business confidence.</h1>
+          <h1>Regulated manufacturing contexts we support.</h1>
           <p className="body-large">
-            The best fit is a business where records, reviews, SOP control and audit readiness are
-            tied closely to operations, release confidence and management pressure.
+            QORIVARA separates sectors by present competence, applicable context and responsibility
+            boundary. The goal is useful QA documentation support, not a broad regulatory shortcut.
           </p>
         </div>
       </section>
 
+      <section className="section section-cream">
+        <div className="container sector-grid">
+          {sectors.map((sector) => (
+            <article className="card sector-card" key={sector.title}>
+              <p className="eyebrow">{sector.title}</p>
+              <h2>{sector.title}</h2>
+              <p>{sector.context}</p>
+              <p>{sector.framing}</p>
+              <div className="scope-note">
+                <strong>Present boundary</strong>
+                <p>{sector.boundary}</p>
+              </div>
+              <div className="sector-service-links">
+                {sector.services.map((slug) => {
+                  const service = serviceDefinitions.find((item) => item.slug === slug);
+                  return service ? (
+                    <TrackableLink href={`/services/${slug}`} key={slug}>
+                      {service.shortTitle}
+                    </TrackableLink>
+                  ) : null;
+                })}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section section-editorial">
-        <div className="container industry-story-grid">
-          <article className="industry-story industry-story-wide">
-            <div className="industry-story-copy">
-              <p className="eyebrow">Pharmaceutical</p>
-              <h3>Support for pharmaceutical teams where review quality and documentation control cannot slip.</h3>
-              <p>
-                A strong fit when batch records, SOPs, technical documents or audit-readiness work
-                need more disciplined support than the current team bandwidth allows.
-              </p>
-            </div>
-            <Image
-              alt="Pharmaceutical manufacturing floor."
-              className="story-image story-image-wide"
-              height={941}
-              priority
-              sizes="(max-width: 980px) 100vw, 64vw"
-              src="/images/pharma-manufacturing.png"
-              width={1672}
-            />
-          </article>
-
-          <article className="industry-story">
-            <Image
-              alt="Ayurvedic and herbal quality process."
-              className="story-image"
-              height={1024}
-              sizes="(max-width: 980px) 100vw, 40vw"
-              src="/images/ayurvedic-quality.png"
-              width={1536}
-            />
-            <div className="industry-story-copy">
-              <p className="eyebrow">Ayurvedic / Herbal</p>
-              <h3>Especially aligned where Ayurveda-linked manufacturing needs both product understanding and formal documentation discipline.</h3>
-              <p>
-                The Pharmaceutical Chemistry and Ayurveda background strengthens the fit for
-                document-heavy quality work in this sector.
-              </p>
-            </div>
-          </article>
-
-          <article className="industry-story">
-            <Image
-              alt="QA documentation and certificate review for related manufacturing sectors."
-              className="story-image"
-              height={1024}
-              sizes="(max-width: 980px) 100vw, 40vw"
-              src="/images/coa-specification.png"
-              width={1536}
-            />
-            <div className="industry-story-copy">
-              <p className="eyebrow">Nutraceutical / Related manufacturing</p>
-              <h3>Useful where adjacent regulated sectors need stronger QA documentation and overflow review support.</h3>
-              <p>
-                The strongest use case is usually documentation cleanup, QA coordination, second
-                review support or temporary bandwidth relief around a clear requirement.
-              </p>
-            </div>
-          </article>
-
-          <article className="industry-story industry-story-text">
-            <p className="eyebrow">Also relevant</p>
-            <h3>Cosmetic and third-party or private-label work can be discussed around the exact bottleneck.</h3>
-            <p>
-              The work is most useful when the pressure point is clear early: backlog, document
-              review, SOP revision, QA coordination or audit-readiness support.
+        <div className="container detail-image-grid">
+          <div>
+            <p className="eyebrow">Next Step</p>
+            <h2>Discuss the sector and document type before scope is accepted.</h2>
+            <p className="section-description">
+              Work outside current competence is declined, narrowed or assigned only when an
+              appropriately qualified professional is available.
             </p>
-            <TrackableLink
-              className="service-link"
-              eventLabel="industries consultation"
-              eventName="consultation_click"
-              href="/contact"
-            >
-              Discuss the bottleneck
+            <TrackableLink className="button button-primary" href="/contact">
+              Discuss a requirement
             </TrackableLink>
-          </article>
+          </div>
+          <Image
+            alt="Controlled pharmaceutical manufacturing environment."
+            className="editorial-image detail-feature-image"
+            height={941}
+            sizes="(max-width: 980px) 100vw, 44vw"
+            src="/images/pharma-manufacturing.png"
+            width={1672}
+          />
         </div>
       </section>
     </>

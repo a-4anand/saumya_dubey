@@ -16,11 +16,11 @@
   --forest-soft: rgba(18, 60, 50, 0.08);
   --line: rgba(19, 34, 30, 0.12);
   --line-strong: rgba(19, 34, 30, 0.2);
-  --brass: #b08a4a;
-  --accent-red: #d05f4f;
-  --accent-red-soft: rgba(208, 95, 79, 0.14);
-  --accent-lime: #9ce37d;
-  --accent-lime-soft: rgba(156, 227, 125, 0.16);
+  --brass: #b59a62;
+  --accent-red: #b59a62;
+  --accent-red-soft: rgba(181, 154, 98, 0.14);
+  --accent-lime: #dce7db;
+  --accent-lime-soft: rgba(220, 231, 219, 0.2);
   --error: #a54a2a;
   --shadow-soft: 0 18px 45px rgba(19, 34, 30, 0.08);
   --shadow-image: 0 22px 54px rgba(19, 34, 30, 0.12);
@@ -73,6 +73,23 @@ button {
 :focus-visible {
   outline: 2px solid var(--forest);
   outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-140%);
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--forest);
+  color: #f7f3e9;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 .site-shell {
@@ -2280,6 +2297,165 @@ figcaption {
   margin-bottom: 18px;
 }
 
+.service-family-grid,
+.offer-grid,
+.service-page-grid,
+.service-detail-layout,
+.sector-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.service-family-grid,
+.offer-grid,
+.service-page-grid,
+.sector-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-detail-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.service-family-stack {
+  display: grid;
+  gap: 56px;
+}
+
+.service-family-block {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.34fr) minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.service-hub-list,
+.method-step-list {
+  border-top: 1px solid var(--line);
+}
+
+.service-hub-row,
+.method-step {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-hub-row {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.method-step {
+  grid-template-columns: 120px minmax(0, 1fr);
+}
+
+.family-service-link {
+  display: block;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  color: var(--forest);
+  font-weight: 700;
+}
+
+.delivery-mode-row,
+.sector-service-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.delivery-mode-row span,
+.sector-service-links a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(18, 60, 50, 0.24);
+  border-radius: 8px;
+  color: var(--forest);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.scope-boundary {
+  border-color: rgba(165, 74, 42, 0.28);
+  background: rgba(255, 250, 240, 0.96);
+}
+
+.scope-note,
+.confidentiality-warning,
+.form-error-summary {
+  padding: 14px;
+  border-left: 3px solid var(--brass);
+  background: rgba(220, 231, 219, 0.38);
+}
+
+.scope-note strong {
+  color: var(--forest);
+}
+
+.faq-mini + .faq-mini {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.form-fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form-fieldset legend {
+  margin-bottom: 14px;
+  color: var(--forest);
+  font-weight: 700;
+}
+
+.field small,
+.consent-row,
+.form-status {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.form-error-summary {
+  border-left-color: var(--error);
+  color: var(--error);
+}
+
+.form-error-summary p {
+  margin: 6px 0 0;
+  color: var(--error);
+}
+
+.consent-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.consent-row input {
+  margin-top: 5px;
+}
+
+.consent-row a {
+  color: var(--forest);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.process-line-layout-seven {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
 @media (max-width: 1100px) {
   .qori-hero-grid,
   .real-work-feature,
@@ -2296,6 +2472,16 @@ figcaption {
 
   .detail-image-grid-reverse .editorial-image {
     order: 2;
+  }
+
+  .service-family-grid,
+  .offer-grid,
+  .service-page-grid,
+  .sector-grid,
+  .service-detail-layout,
+  .service-family-block,
+  .process-line-layout-seven {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -2331,7 +2517,9 @@ figcaption {
   }
 
   .industry-photo-pair,
-  .why-qori-grid {
+  .why-qori-grid,
+  .service-hub-row,
+  .method-step {
     grid-template-columns: minmax(0, 1fr);
   }
 

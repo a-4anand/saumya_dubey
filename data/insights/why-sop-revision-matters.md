@@ -3,6 +3,14 @@ slug: why-sop-revision-matters
 title: Why SOP Revision Matters
 excerpt: SOP quality is not only about writing documents once. It is about keeping them useful, current and aligned with actual work.
 category: SOPs
+pillar: QA Documentation
+author: Saumya Dubey
+publishedAt: "2026-09-05"
+reviewedAt: "2026-09-05"
+relatedService: sop-documentation
+sources:
+  - label: WHO good manufacturing practices overview
+    url: https://www.who.int/teams/health-product-policy-and-standards/standards-and-specifications/norms-and-standards/gmp
 ---
 
 An SOP can be approved and still become less useful over time. Operations change, responsibilities shift and forms evolve. When the document does not keep pace, the gap shows up in training, execution and review.
@@ -27,3 +35,7 @@ Auditors and internal reviewers often look for whether documents are controlled,
 - Are users likely to understand the document without extra interpretation?
 
 Revision is not just an administrative task. It is part of how a quality system stays coherent over time.
+
+## Practical note
+
+QORIVARA can support SOP drafting, review and revision, but the client must provide accurate process inputs and retain approval responsibility.

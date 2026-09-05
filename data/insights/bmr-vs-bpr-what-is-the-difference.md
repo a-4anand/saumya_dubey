@@ -3,6 +3,14 @@ slug: bmr-vs-bpr-what-is-the-difference
 title: "BMR vs BPR: What is the Difference?"
 excerpt: "A plain-English explanation of how batch manufacturing records and batch packaging records differ in purpose and review focus."
 category: Documentation
+pillar: QA Documentation
+author: Saumya Dubey
+publishedAt: "2026-09-05"
+reviewedAt: "2026-09-05"
+relatedService: batch-record-review
+sources:
+  - label: WHO good manufacturing practices overview
+    url: https://www.who.int/teams/health-product-policy-and-standards/standards-and-specifications/norms-and-standards/gmp
 ---
 
 BMR and BPR are often mentioned together because both are central to batch documentation, but they do not serve exactly the same purpose.
@@ -30,3 +38,7 @@ During review, ask:
 - Are there inconsistencies that need clarification before final approval?
 
 The exact structure depends on the company system, but the underlying principle is the same: the record should support traceability, clarity and disciplined review.
+
+## Practical note
+
+QORIVARA reviews BMR/BPR work within the client's approved system. Final batch approval and release responsibility remain with the client's authorized personnel.
