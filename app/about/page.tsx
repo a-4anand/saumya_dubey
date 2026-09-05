@@ -116,10 +116,10 @@ export default function AboutPage() {
               Read professional scope
             </TrackableLink>
           </div>
-          <figure className="experience-image-frame">
+          <figure className="experience-image-frame experience-image-frame-portrait">
             <Image
               alt="Saumya Dubey in a previous professional QA cleanroom setting."
-              className="experience-image"
+              className="experience-image experience-image-portrait-full"
               height={1824}
               sizes="(max-width: 980px) 100vw, 34vw"
               src="/images/real-experience/codex-clipboard-19fc0b89-6b54-4a69-a6a0-d03c92ba830a.png"

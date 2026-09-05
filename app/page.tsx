@@ -3,13 +3,11 @@ import Image from "next/image";
 import { StructuredData } from "@/components/structured-data";
 import { TrackableLink } from "@/components/trackable-link";
 import { WhatsAppIcon } from "@/components/icons";
-import { experienceTimeline, processSteps, siteConfig } from "@/data/site-config";
+import { processSteps, siteConfig } from "@/data/site-config";
 import { productizedOffers, serviceDefinitions, serviceFamilies } from "@/data/services";
 import { createMetadata } from "@/lib/metadata";
 import { emailHref, whatsappHref } from "@/lib/site";
 
-const brandLogo =
-  "/brand/qorivara/03-platform-exports/svg/24-website-header-light.svg";
 const heroPortraitImage = "/images/saumya-hero.png";
 const founderPortraitImage = "/images/saumya-about.png";
 const cleanroomImage =
@@ -59,14 +57,6 @@ export default function HomePage() {
       <section className="qori-hero">
         <div className="container qori-hero-grid">
           <div className="qori-hero-copy">
-            <Image
-              alt="Qorivara Life Sciences"
-              className="qori-hero-logo"
-              height={1065}
-              priority
-              src={brandLogo}
-              width={4096}
-            />
             <p className="hero-descriptor">{siteConfig.descriptor}</p>
             <h1>Structured QA support for documentation-heavy manufacturing teams.</h1>
             <p className="body-large">
@@ -240,7 +230,7 @@ export default function HomePage() {
             <p className="eyebrow">Controlled Method</p>
             <h2>Simple to start, controlled before confidential work begins.</h2>
           </div>
-          <div className="process-line-layout process-line-layout-large process-line-layout-seven">
+          <div className="process-line-layout process-line-layout-large">
             {processSteps.map((step) => (
               <article className="process-line-item" key={step.step}>
                 <span className="process-line-number">{step.step}</span>
