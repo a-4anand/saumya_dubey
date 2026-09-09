@@ -265,7 +265,7 @@ export const experienceTimeline: ExperienceEntry[] = [
   {
     yearLabel: "Next",
     company: "Ronald Pharmaceutical Ltd",
-    role: "Quality Assurance Officer",
+    role: "Quality Assurance Senior Officer",
     note: "1 year",
   },
   {
