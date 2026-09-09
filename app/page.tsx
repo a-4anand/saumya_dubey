@@ -10,11 +10,6 @@ import { emailHref, whatsappHref } from "@/lib/site";
 
 const heroPortraitImage = "/images/saumya-hero.png";
 const founderPortraitImage = "/images/saumya-about.png";
-const cleanroomImage =
-  "/images/real-experience/codex-clipboard-19fc0b89-6b54-4a69-a6a0-d03c92ba830a.png";
-const qaDeskImage =
-  "/images/real-experience/codex-clipboard-d7bb4d8b-be8a-4fd3-8957-134ba09e6189.png";
-const whiteCoatImage = "/images/document-review.png";
 const pharmaImage = "/images/pharma-manufacturing.png";
 const ayurvedicImage = "/images/ayurvedic-quality.png";
 const technicalImage = "/images/coa-specification.png";
@@ -58,11 +53,10 @@ export default function HomePage() {
         <div className="container qori-hero-grid">
           <div className="qori-hero-copy">
             <p className="hero-descriptor">{siteConfig.descriptor}</p>
-            <h1>Structured QA support for documentation-heavy manufacturing teams.</h1>
+            <h1>QA documentation support for manufacturing teams.</h1>
             <p className="body-large">
-              QORIVARA helps pharmaceutical, Ayurvedic and selected regulated manufacturers reduce
-              documentation backlog, strengthen review discipline and prepare for audits through
-              scoped remote, hybrid and on-site support.
+              QORIVARA helps pharmaceutical, Ayurvedic and selected regulated manufacturers clean
+              up documentation, review records and prepare for audits through scoped QA support.
             </p>
             <div className="hero-credential-row" aria-label="Saumya Dubey credentials">
               {siteConfig.credibilityStrip.map((item) => (
@@ -102,7 +96,6 @@ export default function HomePage() {
               src={heroPortraitImage}
               width={1536}
             />
-            <figcaption>Founder-led credibility inside a company-led QA service system.</figcaption>
           </figure>
         </div>
       </section>

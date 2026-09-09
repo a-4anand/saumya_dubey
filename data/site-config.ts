@@ -264,9 +264,9 @@ export const experienceTimeline: ExperienceEntry[] = [
   },
   {
     yearLabel: "Next",
-    company: "Unilever",
+    company: "Ronald Pharmaceutical Ltd",
     role: "Quality Assurance Officer",
-    note: "~6 months",
+    note: "1 year",
   },
   {
     yearLabel: "Next",
@@ -352,7 +352,7 @@ export const trustHighlights = [
   "D.Pharm — Ayurveda",
   "~3 years QA experience",
   "Founder-led support with direct communication",
-  "Previous QA roles at Mepromax Lifescience, Unilever and DAC55",
+  "Previous QA roles at Mepromax Lifescience, Ronald Pharmaceutical Ltd and DAC55",
   "Focused on backlog reduction, documentation quality and audit readiness",
 ];
 
